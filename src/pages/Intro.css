@@ -1,0 +1,26 @@
+.link_button {
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    /* text-decoration: none; */
+}
+
+.intro_img{
+    background-image: url(../images/gradation.jpg);      
+    height: 80vh;
+    background-size: cover;
+    width: 70%;
+    display: block; 
+    margin: 20px auto;
+}
+
+.intro_img .intro_text{
+     position: absolute;
+     top:50%;
+     left:50%;
+     transform: translate(-50%, -50%);                                                                   
+     font-size:2rem;
+     color: rgb(255, 255, 255);
+     text-align: center;
+}
