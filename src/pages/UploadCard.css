@@ -1,0 +1,24 @@
+.upload_form {
+    width:100%;
+    height:100%;
+	background:rgb(255, 255, 255);
+    text-align: center;
+    font-size: 3vw;
+    font-family: fantasy;
+    color: rgb(0, 0, 0);
+}
+
+.container {
+	max-width:400px;
+	width:100%;
+	margin: auto;
+	position:relative;
+}
+
+.upload_button {
+    background-color:#ffffff;
+	font-size:20px;
+    padding: 5px 50px;
+    margin : 10% auto;
+    display: flex;
+}

@@ -4,7 +4,7 @@ import './Intro.css';
 
 function Intro() {
     return (
-        <div>
+        <div className="wrap">
             <div className="intro_img">
                 <div className="intro_text">
                     <h1>Cheer-Up!</h1>

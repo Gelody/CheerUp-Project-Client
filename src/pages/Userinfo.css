@@ -1,21 +1,19 @@
 .userinfo_birth_box{
-    width:30%;
-    font-size: 20px;
+    width:50%;
     margin:auto;
     margin-top: 10%;
 }
 
 .userinfo_birth {
     width:30%;
-    height: 100%;
-    font-size: 20px;
+    font-size: 2vw;
     padding: 5%;
     margin-left: 3.3%;
 }
 
 .userinfo_sex{
     width:30%;
-    font-size: 20px;
+    font-size: 2vw;
     display: block;
     margin:auto;
     padding: 1.5%;
@@ -23,8 +21,16 @@
 
 .userinfo_interest{
     width:30%;
-    font-size: 20px;
+    font-size: 2vw;
     display: block;
     margin:auto;
     padding: 1.5%;
+}
+
+.next_button{
+    background-color:#ffffff;
+	font-size:20px;
+    padding: 5px 50px;
+    margin : auto;
+    display: flex;
 }
