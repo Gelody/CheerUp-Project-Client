@@ -26,7 +26,7 @@ function Signup() {
                     placeholder="비밀번호 확인">
                 </input>
 
-                <button className="signup_button" type="submit">회원가입</button>
+                <button className="signup_button" type="submit">가입하기</button>
             </form>
         </div>
     )
