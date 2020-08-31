@@ -2,8 +2,13 @@
     width: 70%;
     height: 60px;
     margin: auto;
+    background-color: white;
     border-bottom: 0.01rem solid;
-    border-bottom-color: black
+    border-bottom-color: black;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
 }
 
 .main_link_icon{
