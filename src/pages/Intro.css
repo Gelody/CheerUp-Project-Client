@@ -1,0 +1,37 @@
+.link_button {
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.intro_img{
+    background-image: url(../images/gradation.jpg);      
+    height: 100%;
+    background-size: cover;
+    width: 70%;
+    display: block; 
+    margin: 20px auto;
+}
+
+.intro_wrap{
+    background-color: rgb(247, 217, 217);
+    width: 80%;
+    text-align: center;
+    margin: 0px auto;
+    height: 500px;
+}
+
+
+.intro_img .intro_text{
+position: relative; 
+top: 50%;
+left: 50%; 
+transform:translate(-50%, -50%); 
+color: white;
+font-family: sans-serif; 
+text-align: center; 
+text-shadow: 0 0 10px rgba(0,0,0,0.5);
+font-size: 3vw; 
+}

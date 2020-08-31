@@ -1,5 +1,5 @@
 import React from 'react';
-import MypageNav from './MycardList';
+import MypageNav from './MypageNav';
 import Dashboard from './Dashboard';
 import MycardList from './MycardList';
 import CheeringList from './CheeringList'
