@@ -14,28 +14,14 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/signup">
-          <Signup />
-        </Route>
-        <Route exact path="/userinfo">
-          <Userinfo />
-        </Route>
-        <Route exact path="/mypage">
-          <Mypage />
-        </Route>
-        <Route exact path="/upload">
-          <Upload />
-        </Route>
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/userinfo" component={Userinfo} />
+        <Route exact path="/mypage" component={Mypage} />
+        <Route exact path="/upload" component={Upload} />
         <Route exact path="/main/:id" component={Main} />
-        <Route exact path="/">
-          <Intro />
-        </Route>
-        <Route>
-          <NotFound />
-        </Route>
+        <Route exact path="/" component={Intro} />
+        <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
