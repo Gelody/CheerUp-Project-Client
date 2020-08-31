@@ -2,7 +2,7 @@ import React from 'react';
 import Dashboard from './Dashboard';
 import MycardList from './MycardList';
 import CheeringList from './CheeringList'
-import Nav from './Nav';
+import Nav from './Nav'
 
 function Mypage() {
     return (<div>

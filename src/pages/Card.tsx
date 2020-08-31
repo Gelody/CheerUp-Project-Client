@@ -1,7 +1,9 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 function Card() {
-    return <div>카드입니다.</div>
+    let { id } = useParams();
+    return <div>{id}의 카드입니다.</div>
 }
 
 export default Card;
