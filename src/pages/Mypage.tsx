@@ -5,12 +5,14 @@ import CheeringList from './CheeringList'
 import Nav from './Nav'
 
 function Mypage() {
-    return (<div>
-        <Nav></Nav>
-        <Dashboard></Dashboard>
-        <MycardList></MycardList>
-        <CheeringList></CheeringList>
-    </div>);
+    return (
+        <div>
+            <Nav></Nav>
+            <Dashboard></Dashboard>
+            <MycardList></MycardList>
+            <CheeringList></CheeringList>
+        </div>
+    );
 }
 
 export default Mypage;
