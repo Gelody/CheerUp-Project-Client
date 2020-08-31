@@ -1,35 +1,103 @@
-import React from 'react';
-import './Signup.css'
-
+import React, { useState } from "react";
+import "./Signup.css";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 function Signup() {
-    return (
-        <div>
-            <form>
-                <input className="signup_form"
-                    type="email"
-                    placeholder="아이디 (이메일 주소)">
-                </input>
+  // input을 담을 상태들과 상태변경 함수 선언하기
+  const [email, setEmail] = useState("");
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordCheck, setPasswordCheck] = useState("");
+  const [passwordErr, setPasswordErr] = useState(false);
+  const signUpInfo = { email, userName, password, passwordCheck };
+  const history = useHistory();
 
-                <input className="signup_form"
-                    type="username"
-                    placeholder="이름">
-                </input>
+  // 비밀번호 검증로직
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    password !== passwordCheck
+      ? setPasswordErr(true)
+      : console.log({ email, userName, password, passwordCheck });
+    axios
+      .post("/signup", signUpInfo)
+      .then((res) => {
+        if (res.status === 409) {
+          alert("계정이 이미 존재합니다.");
+          history.push("/login");
+        } else if (res.status === 200) {
+          alert("가입이 완료되었습니다.");
+          history.push(`/main/${Math.floor(Math.random() * 100)}`);
+        }
+      })
+      .catch((err) => console.log(err));
+  };
 
-                <input className="signup_form"
-                    type="password"
-                    placeholder="비밀번호">
-                </input>
+  // input 값 state 담기
+  const onChangeEamil = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+  const onChangeUserName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUserName(e.target.value);
+  };
+  const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+  };
+  // 비밀번호 check 실시간 검증
+  const onChangePasswordCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPasswordErr(e.target.value !== password);
+    setPasswordCheck(e.target.value);
+  };
 
-                <input className="signup_form"
-                    type="password"
-                    placeholder="비밀번호 확인">
-                </input>
+  return (
+    <div>
+      <form onSubmit={onSubmit}>
+        <input
+          className="signup_form"
+          required
+          type="email"
+          placeholder="아이디 (이메일 주소)"
+          value={email}
+          onChange={onChangeEamil}
+        />
 
-                <button className="signup_button" type="submit">가입하기</button>
-            </form>
-        </div>
-    )
+        <input
+          className="signup_form"
+          required
+          type="username"
+          placeholder="이름"
+          value={userName}
+          onChange={onChangeUserName}
+        />
+
+        <input
+          className="signup_form"
+          required
+          type="password"
+          placeholder="비밀번호"
+          value={password}
+          onChange={onChangePassword}
+        />
+
+        <input
+          className="signup_form"
+          required
+          type="password"
+          placeholder="비밀번호 확인"
+          value={passwordCheck}
+          onChange={onChangePasswordCheck}
+        />
+        {passwordErr ? (
+          <p className="password-feedback">비밀번호가 일치하지 않습니다.</p>
+        ) : (
+          <p></p>
+        )}
+        <button className="signup_button" type="submit">
+          가입하기
+        </button>
+      </form>
+    </div>
+  );
 }
 
 export default Signup;
