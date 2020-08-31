@@ -10,6 +10,7 @@ import Mypage from './pages/Mypage';
 import Upload from './pages/Upload';
 import NotFound from './pages/NotFound';
 import Card from './pages/Card';
+import Nav from './pages/Nav';
 
 function App() {
   return (
