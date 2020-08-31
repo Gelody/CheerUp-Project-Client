@@ -2,16 +2,12 @@
     background-color: rgb(238, 174, 174);
     width:70%;
     height: 100%;
-    margin-top: 30px;
     margin: auto;
-    padding: 20px;
     text-align: center;
 }
 
 .review_button{
     background-color:#ffffff;
 	font-size:20px;
-    padding: 5px 50px;
     margin : auto;
-    display: flex;
 }

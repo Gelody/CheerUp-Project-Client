@@ -1,15 +1,16 @@
-import React from 'react';
-import Card from './Card';
-import Comment from './Comment';
-import Nav from './Nav'
+import React from "react";
+import Card from "./Card";
+import Nav from "./Nav";
 
 function Main() {
-    return (
-        <div>
-            <Nav></Nav>
-            <Card></Card>
-            <Comment></Comment>
-        </div>);
+  return (
+    <>
+      <Nav></Nav>
+      <div className="card_wrapper">
+        <Card></Card>
+      </div>
+    </>
+  );
 }
 
 export default Main;

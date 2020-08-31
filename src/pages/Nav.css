@@ -1,33 +1,38 @@
-.navBar{
-    width: 70%;
-    height: 60px;
-    margin: auto;
-    border-bottom: 0.01rem solid;
-    border-bottom-color: black
+.navBar {
+  width: 70%;
+  height: 60px;
+  margin: auto;
+  background-color: white;
+  border-bottom: 0.01rem solid;
+  border-bottom-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
-.main_link_icon{
-    float:left;
-    height: 80%;
-    margin-top: 1%;
+.main_link_icon {
+  float: left;
+  height: 80%;
+  margin-top: 1%;
 }
 
-.upload_link_icon{
-    float: right;
-    width: 30px;
-    margin-right:4%;
-    margin-top: 1%;
+.upload_link_icon {
+  float: right;
+  width: 30px;
+  margin-right: 4%;
+  margin-top: 1%;
 }
 
-.notification_link_icon{
-    float: right;
-    width: 30px;
-    margin-right:4%;
-    margin-top: 1%;
+.notification_link_icon {
+  float: right;
+  width: 30px;
+  margin-right: 4%;
+  margin-top: 1%;
 }
 
-.mypage_link_icon{
-    float: right;
-    width: 30px;
-    margin-top: 1%;
+.mypage_link_icon {
+  float: right;
+  width: 30px;
+  margin-top: 1%;
 }
