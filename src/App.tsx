@@ -9,7 +9,7 @@ import Main from './pages/Main';
 import Mypage from './pages/Mypage';
 import Upload from './pages/Upload';
 import NotFound from './pages/NotFound';
-import Card from './pages/Card';
+
 
 function App() {
   return (
@@ -18,8 +18,7 @@ function App() {
         <Route exact path="/login"><Login /></Route>
         <Route exact path="/signup"><Signup /></Route>
         <Route exact path="/userinfo"><Userinfo /></Route>
-        <Route exact path="/main"><Main /></Route>
-        <Route exact path="/main/card"><Card /></Route>
+        <Route exact path="/:id" component={Main} />
         <Route exact path="/mypage"><Mypage /></Route>
         <Route exact path="/upload"><Upload /></Route>
         <Route exact path="/"><Intro /></Route>
