@@ -1,11 +1,11 @@
 import React from 'react';
-import UploadNav from './UploadNav';
 import UploadCard from './UploadCard';
+import Nav from './Nav';
 
 function Upload() {
     return (
         <div>
-            <UploadNav></UploadNav>
+            <Nav></Nav>
             <UploadCard></UploadCard>
         </div>
     )
