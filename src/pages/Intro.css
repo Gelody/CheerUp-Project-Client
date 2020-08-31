@@ -3,7 +3,7 @@
     font-size: 40px;
     display: flex;
     justify-content: center;
-    /* text-decoration: none; */
+    text-decoration: none;
 }
 
 .intro_img{
@@ -15,8 +15,9 @@
     margin: 20px auto;
 }
 
-.wrap{
-    width:100%;
+.intro_wrap{
+    background-color: rgb(247, 217, 217);
+    width: 80%;
     text-align: center;
     margin: 0px auto;
     height: 500px;
