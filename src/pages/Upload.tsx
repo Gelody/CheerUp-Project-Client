@@ -4,10 +4,10 @@ import Nav from './Nav';
 
 function Upload() {
     return (
-        <div>
+        <>
             <Nav></Nav>
             <UploadCard></UploadCard>
-        </div>
+        </>
     )
 }
 

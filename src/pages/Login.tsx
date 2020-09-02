@@ -46,7 +46,7 @@ function Login() {
   };
 
   return (
-    <div>
+    <>
       <form onSubmit={onSubmit}>
         <input
           required
@@ -78,7 +78,7 @@ function Login() {
           회원가입
         </Link>
       </form>
-    </div>
+    </>
   );
 }
 

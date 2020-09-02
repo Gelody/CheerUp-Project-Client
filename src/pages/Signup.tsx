@@ -55,7 +55,7 @@ function Signup() {
   };
 
   return (
-    <div>
+    <>
       <form onSubmit={onSubmit}>
         <input
           className="signup_form"
@@ -95,13 +95,13 @@ function Signup() {
         {passwordErr ? (
           <p className="password-feedback">비밀번호가 일치하지 않습니다.</p>
         ) : (
-          <p></p>
-        )}
+            <p></p>
+          )}
         <button className="signup_button" type="submit">
           가입하기
         </button>
       </form>
-    </div>
+    </>
   );
 }
 

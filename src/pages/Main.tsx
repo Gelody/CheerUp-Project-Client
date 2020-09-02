@@ -1,13 +1,16 @@
 import React from "react";
 import Card from "./Card";
+import SnsShare from "./SnsShare"
 import Nav from "./Nav";
 
 function Main() {
+
   return (
     <>
-      <Nav></Nav>
+      <Nav />
       <div className="card_wrapper">
-        <Card></Card>
+        <Card />
+        <SnsShare />
       </div>
     </>
   );
