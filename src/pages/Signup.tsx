@@ -5,29 +5,34 @@ import axios from "axios";
 
 function Signup() {
   // input을 담을 상태들과 상태변경 함수 선언하기
+  // Hooks 사용하기
   const [email, setEmail] = useState("");
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
   const [passwordErr, setPasswordErr] = useState(false);
-  const signUpInfo = { email, userName, password, passwordCheck };
+  const signUpInfo = {
+    userId: email,
+    userPassword: password,
+    usernName: userName,
+  };
   const history = useHistory();
 
-  // 비밀번호 검증로직
+  // 서버 요청 및 비밀번호 검증로직
   const onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     password !== passwordCheck
       ? setPasswordErr(true)
-      : console.log({ email, userName, password, passwordCheck });
+      : console.log({ signUpInfo });
     axios
-      .post("/signup", signUpInfo)
+      .post("/user/join", signUpInfo)
       .then((res) => {
         if (res.status === 409) {
           alert("계정이 이미 존재합니다.");
-          history.push("/login");
+          history.push(`/main/${Math.floor(Math.random() * 100)}`);
         } else if (res.status === 200) {
           alert("가입이 완료되었습니다.");
-          history.push(`/main/${Math.floor(Math.random() * 100)}`);
+          history.push("/login");
         }
       })
       .catch((err) => console.log(err));
