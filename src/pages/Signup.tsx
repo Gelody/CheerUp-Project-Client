@@ -55,7 +55,7 @@ function Signup() {
   };
 
   return (
-    <div>
+    <>
       <form onSubmit={onSubmit}>
         <input
           className="signup_form"
@@ -101,7 +101,7 @@ function Signup() {
           가입하기
         </button>
       </form>
-    </div>
+    </>
   );
 }
 

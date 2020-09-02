@@ -3,7 +3,7 @@ import './Userinfo.css';
 
 function Userinfo() {
     return (
-        <div>
+        <>
             <form>
                 <div className="userinfo_birth_box">
                     <select className="userinfo_birth">
@@ -106,7 +106,7 @@ function Userinfo() {
                 <br />
                 <button className="next_button" type="submit">Next</button>
             </form>
-        </div >
+        </>
     )
 }
 

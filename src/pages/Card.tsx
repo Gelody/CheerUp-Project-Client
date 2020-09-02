@@ -14,22 +14,6 @@ function Card() {
             </div>
                 <Comment></Comment>
             </div>
-            <div className="card_box">
-                <div className="card">
-                    {id}의 카드입니다.
-                asdsdasd
-                asdasdasd
-            </div>
-                <Comment></Comment>
-            </div>
-            <div className="card_box">
-                <div className="card">
-                    {id}의 카드입니다.
-                asdsdasd
-                asdasdasd
-            </div>
-                <Comment></Comment>
-            </div>
         </>
     )
 }
