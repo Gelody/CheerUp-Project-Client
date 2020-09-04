@@ -1,34 +1,34 @@
-.card_wrapper{
+.maincard_wrapper{
+    background-color: blueviolet;
     width:70%;
     height: 100%;
     margin: auto;
-    padding-top: 5%;
+    margin-top: 13%;
 }
 
-.card_box{
-    width: 100%;
-    height: 300px;
-    margin: auto;
-    margin-top: 2%;
-    overflow-x: hidden;
+.maincard_box{
+    background-color: blue;
+    width:100%;
+    height:700px;
 }
 
-.card{
-    background-color: blanchedalmond;
-    display: flex;
-    float: left;
+.maincard{
+    background-color: salmon;
+    border: solid;
+    border-color: rgb(230, 230, 230);
     width: 50%;
-    height: 100%;
-    font-size:4vh;
+    height: 300px;
+    /* float: left; */
 }
 
+.maincards_text{
+    font-size:10px;
+}
 
 .comment{
+    border: solid;
+    border-color: rgb(230, 230, 230);
+    width:50%;
     background-color: rgb(223, 89, 134);
-    display: flex;
-    float: left;
-    width: 50%;
-    height: 100%;
-    font-size:3vh;
-    overflow-x: hidden;
+    /* float: left; */
 }

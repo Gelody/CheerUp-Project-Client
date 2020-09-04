@@ -1,12 +1,12 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import SnsShare from "./SnsShare"
 
 function Comment() {
-    let { id } = useParams();
     return (
         <>
             <div className="comment">
-                {id}의 댓글입니다.
+                의 댓글입니다.
+            <SnsShare />
             </div>
         </>
     )

@@ -1,17 +1,47 @@
 .mycardlist_wrap{
-    /* background-color: rgb(238, 174, 174);
-    width:70%;
-    height: 500px;
-    margin: auto; */
+    max-width: 600px;
+    max-height: 300px;
+    width: 70%;
+    height: 30%;
+    margin: auto;
     text-align: center;
+    overflow-x: scroll;
+    white-space: nowrap;
+    position: relative;
 }
 
 .review_button{
     background-color:#ffffff;
-	font-size:20px;
-    margin : auto;
+    font-size:10%;
+    position: absolute;
+    bottom:15%;
 }
-.cardText{
-    font-size:20px;
-    color: black;
+.mycard_text{
+    font-size:10px;
+    position: absolute;
+    line-height: 1.6;
+    max-height: 4.8em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+   top: 40%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   white-space: normal;
+}
+
+.mycard{
+border: solid;
+border-color: black;
+width: 150px;
+height: 150px;
+display: inline-block;
+position: relative;
+margin-right: 10px;
+}
+
+.mycard_title{
+    margin: auto;
+    text-align: center;
 }
