@@ -4,13 +4,16 @@ import axios from "axios";
 
 function UploadCard() {
     const [text, setText] = useState("");
-    const cardData = { text: text }
+    const user = JSON.parse(window.sessionStorage.user);
+    const cardData = { text: text, user_Id: "user" }
 
     const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+        e.preventDefault();
         axios
-            .post("/card", cardData)
+            .post("/card/create", cardData, { headers: { authorization: user } })
             .then((res) => {
-                if (res.data.success) {
+                if (res.status === 200) {
+                    console.log(res);
                     alert("카드가 등록되었습니다.");
                 } else {
                     alert("카드 등록에 문제가 있습니다.");
@@ -41,3 +44,7 @@ function UploadCard() {
 }
 
 export default UploadCard;
+
+
+
+
