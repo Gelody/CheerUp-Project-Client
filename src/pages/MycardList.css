@@ -1,8 +1,8 @@
 .mycardlist_wrap{
-    background-color: rgb(238, 174, 174);
+    /* background-color: rgb(238, 174, 174);
     width:70%;
-    height: 100%;
-    margin: auto;
+    height: 500px;
+    margin: auto; */
     text-align: center;
 }
 
@@ -10,4 +10,8 @@
     background-color:#ffffff;
 	font-size:20px;
     margin : auto;
+}
+.cardText{
+    font-size:20px;
+    color: black;
 }
