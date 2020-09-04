@@ -27,6 +27,7 @@ function Login() {
           alert("존재하지 않는 아이디입니다.");
           history.push("/login");
         } else if (res.status === 200) {
+          console.log(res);
           history.push(`/main/${Math.floor(Math.random() * 100)}`);
         }
       })
