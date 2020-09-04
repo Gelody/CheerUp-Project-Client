@@ -1,32 +1,20 @@
 import React from 'react';
-import './MycardList.css'
-import axios from 'axios';
+import './MycardList.css';
+import './Mypage';
+// ["ㅁㄴㅇㅁㄴㅇ", "ㅁㅇㅁㄴㅇ", "sasdasd"]
+function MycardList({ mycards }: any) {
+    console.log("여기는 카드리스트", mycards)
 
-function MycardList() {
-    const user = JSON.parse(window.sessionStorage.user);
-    let A: any = [];
-
-    axios
-        .get('/card/get', { headers: { authorization: user } })
-        .then((res) => {
-            if (res.status === 200) {
-                console.log(res.data);
-                console.log("카드의 정보를 성공적으로 가져왔습니다")
-                A.push(res.data);
-            } else {
-                console.log("카드의 정보를 가져오는데 문제가 있습니다")
-            }
-        })
-        .catch(err => console.log(err))
-
+    const cardList = <ul>{mycards.map((mycard: string) => <li>{mycard}</li>)}</ul>
+    // console.log(mycard)
+    console.log("return하기전 카드리스트", cardList);
     return (
         <>
             <div className="mycardlist_wrap">
-                받아온 데이터를 이곳에 보여주고 싶습니다.
-                {console.log(A)}
-                {console.log(A)}
-                {console.log(A)}
-                {A}
+                프롭스를 리스트로 보여주면됩니다.
+                나오나?
+                {console.log("카드리스트", cardList)}
+                {cardList}
                 <form>
                     <button className="review_button" type="submit">후기등록</button>
                 </form>
