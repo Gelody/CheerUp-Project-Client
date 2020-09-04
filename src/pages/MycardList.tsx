@@ -1,14 +1,20 @@
 import React from 'react';
-import './MycardList.css'
+import './MycardList.css';
+import './Mypage';
+// ["ㅁㄴㅇㅁㄴㅇ", "ㅁㅇㅁㄴㅇ", "sasdasd"]
+function MycardList({ mycards }: any) {
+    console.log("여기는 카드리스트", mycards)
 
-function MycardList(props: any) {
-    console.log(props)
-    let list = props
-    console.log(list)
+    const cardList = <ul>{mycards.map((mycard: string) => <li>{mycard}</li>)}</ul>
+    // console.log(mycard)
+    console.log("return하기전 카드리스트", cardList);
     return (
         <>
             <div className="mycardlist_wrap">
-                받아온 데이터를 이곳에 보여주고 싶습니다.
+                프롭스를 리스트로 보여주면됩니다.
+                나오나?
+                {console.log("카드리스트", cardList)}
+                {cardList}
                 <form>
                     <button className="review_button" type="submit">후기등록</button>
                 </form>
