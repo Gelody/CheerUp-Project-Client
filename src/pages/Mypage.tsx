@@ -6,32 +6,29 @@ import Nav from "./Nav";
 import axios from "axios";
 
 function Mypage() {
-  const [mycard, setmycard]: any = useState([])
+  const [mycard, setMycard]: any = useState([])
   const user = JSON.parse(window.sessionStorage.user);
+
   useEffect(() => {
     axios
       .get('/card/get', { headers: { authorization: user } })
-      .then((res) => {
-        if (res.status === 200) {
-          console.log("카드의 정보를 성공적으로 가져왔습니다")
-          for (let i = 0; i < res.data.length; i++) {
-            // mycard.push(<li>res.data[i].text</li>)
-            mycard.push(res.data[i].text)
-          }
-          console.log("여기는 마이페이지", mycard)
+      .then(({ data }) => {
+        setMycard(data);
+        if (data) {
+          console.log(data)
+          console.log("나의 카드를 성공적으로 가져왔습니다")
         } else {
-          console.log("카드의 정보를 가져오는데 문제가 있습니다")
+          console.log("카드 데이터가 없습니다")
         }
       })
       .catch(err => console.log(err))
-  })
+  }, [user]);
 
   return (
     <>
       <Nav></Nav>
       <Dashboard></Dashboard>
-      <MycardList mycards={mycard} />
-      {/* <MycardList {...mycard} /> */}
+      <MycardList mycard={mycard}></MycardList>
       <CheeringList></CheeringList>
     </>
   );
