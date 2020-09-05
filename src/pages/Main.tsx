@@ -11,13 +11,12 @@ function Main() {
       .then(({ data }) => {
         setCards(data);
         if (data) {
-          console.log(data)
-          console.log("모든 카드를 성공적으로 가져왔습니다")
+          console.log("모든 카드를 성공적으로 가져왔습니다", data)
         } else {
           console.log("카드 데이터가 없습니다")
         }
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
   }, []);
 
   return (

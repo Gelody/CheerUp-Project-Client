@@ -7,14 +7,14 @@ function Card({ cards }: any) {
     return (
         <>
             <div className="maincard_wrapper">
-                {cards.map((card: any, index: any) => (
-                    <div className="maincard_box">
-                        <div key={index} className="maincard">
+                {cards.map((card: any, id: any) => (
+                    <div key={id} className="maincard_box">
+                        <div className="maincard">
 
                             <div className="maincards_text"> {card.text}</div>
 
                         </div>
-                        <Comment></Comment>
+                        <Comment cardId={card.id}></Comment>
                     </div>
                 ))}
             </div>

@@ -4,10 +4,12 @@
     width: 70%;
     height: 30%;
     margin: auto;
+    border: solid;;
     text-align: center;
     overflow-x: scroll;
     white-space: nowrap;
     position: relative;
+    padding: 5%;
 }
 
 .review_button{

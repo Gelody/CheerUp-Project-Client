@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './SnsShare.css'
 const url = (window.location.href);
 const title = "Cheer-Up!"
 
@@ -18,10 +18,10 @@ function SnsShare() {
 
     return (
         <>
-            <button className="contents-button" onClick={naverShare}>
+            <button className="share_button" onClick={naverShare}>
                 네이버공유</button>
 
-            <button className="contents-button" onClick={TwitterShare}>
+            <button className="share_button" onClick={TwitterShare}>
                 트위터공유</button>
         </>
     )

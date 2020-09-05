@@ -33,7 +33,7 @@ function UploadCard() {
                     <textarea className="upload_form"
                         value={text}
                         onChange={onChangeText}
-                        maxLength={250}
+                        maxLength={300}
                         placeholder="어떤 일에 응원이 필요하신가요?">
                     </textarea>
                     <button className="upload_button" type="submit">카드 등록하기</button>
