@@ -8,6 +8,7 @@
     border: solid;
     width: 70%;
     margin: auto;
+    cursor: pointer;
 }
 
 .intro_img{

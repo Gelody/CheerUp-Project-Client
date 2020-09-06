@@ -17,6 +17,7 @@
     font-size:10%;
     position: absolute;
     bottom:15%;
+    cursor: pointer;
 }
 .mycard_text{
     font-size:10px;

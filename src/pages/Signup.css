@@ -14,6 +14,7 @@
   padding: 5px 50px;
   margin: auto;
   display: flex;
+  cursor: pointer;
 }
 
 .password-feedback {

@@ -14,7 +14,7 @@ function Signup() {
   const signUpInfo = {
     userId: email,
     userPassword: password,
-    usernName: userName,
+    userName: userName,
   };
   const history = useHistory();
 
