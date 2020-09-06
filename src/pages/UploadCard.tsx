@@ -7,6 +7,7 @@ function UploadCard() {
     const user = JSON.parse(window.sessionStorage.user);
     const cardData = { text: text, user_Id: "user" }
 
+    // 카드 등록 요청 
     const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();
         axios

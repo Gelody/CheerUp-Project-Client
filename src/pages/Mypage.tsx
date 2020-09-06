@@ -15,7 +15,6 @@ function Mypage() {
       .then(({ data }) => {
         setMycard(data);
         if (data) {
-          console.log(data)
           console.log("나의 카드를 성공적으로 가져왔습니다")
         } else {
           console.log("카드 데이터가 없습니다")
@@ -26,10 +25,10 @@ function Mypage() {
 
   return (
     <>
-      <Nav></Nav>
-      <Dashboard></Dashboard>
-      <MycardList mycard={mycard}></MycardList>
-      <CheeringList></CheeringList>
+      <Nav />
+      <Dashboard />
+      <MycardList mycard={mycard} />
+      <CheeringList />
     </>
   );
 }
