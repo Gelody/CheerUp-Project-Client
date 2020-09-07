@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SnsShare from "./SnsShare";
 import axios from "axios";
-import './Comments.css';
+import './Comment.css';
 
 function Comment({ cardId }: any) {
     const [text, setText] = useState("");
