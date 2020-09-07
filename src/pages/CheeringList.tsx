@@ -1,12 +1,19 @@
 import React from 'react';
-import './CheeringList.css'
 
-function CheeringList() {
+function CheeringList({ cheerCard }: any) {
     return (
         <>
-            <div className="cheeringlist_wrap">
-                응원한 카드 리스트입니다.
-        </div>
+            <h1 className="mycard_title">응원한 카드</h1>
+            <br />
+            <div className="mycardlist_wrap">
+
+                {cheerCard.map((card: any, index: any) => (
+                    <div key={index} className="mycard">
+                        <span className="mycard_text">{card.text}</span>
+                    </div>
+                ))}
+
+            </div>
         </>
     )
 }

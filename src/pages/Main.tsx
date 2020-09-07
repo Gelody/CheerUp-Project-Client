@@ -5,7 +5,6 @@ import axios from "axios";
 
 function Main() {
   const [cards, setCards]: any = useState([])
-
   // 모든 카드 받아오는 요청
   useEffect(() => {
     axios

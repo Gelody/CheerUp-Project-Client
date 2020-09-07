@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import SnsShare from "./SnsShare";
 import axios from "axios";
-import './Comments.css';
+import './Comment.css';
 
 function Comment({ cardId }: any) {
     const [text, setText] = useState("");
     const [comments, setComments]: any = useState([]);
-    const card = { cardId }
+    const card = { cardId };
     const user = JSON.parse(window.sessionStorage.user);
     const comment_upload_Data = { text: text, id: card.cardId };
     const comment_get_Data = {
@@ -57,8 +57,8 @@ function Comment({ cardId }: any) {
             <div className="comment_box">
                 <SnsShare />
                 <br />
-                {comments.map((comments: any) => (
-                    <div className="comments_list">
+                {comments.map((comments: any, index: any) => (
+                    <div key={index} className="comments_spanst">
                         <span className="comments_user_name">{comments.User.userName}</span>
                         <span className="user_comment"> {comments.text}</span>
                     </div>
