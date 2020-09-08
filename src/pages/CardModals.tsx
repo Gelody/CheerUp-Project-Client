@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./CardModals.css";
 import axios from "axios";
-import Comment from "./Comment";
 
 function CardModal({ isOpen, close, open }: any) {
   const [modalCard, setModalCard]: any = useState([]);
+  const modalComments = modalCard[0]?.Comment
   const history = useHistory();
   const cardId = window.location.href.split("/")[4];
   const user = JSON.parse(window.sessionStorage.user);
@@ -30,9 +30,11 @@ function CardModal({ isOpen, close, open }: any) {
         console.log(err);
       });
   }, []);
+
   useEffect(() => {
     open();
   }, []);
+
   return (
     <React.Fragment>
       {isOpen ? (
@@ -40,22 +42,33 @@ function CardModal({ isOpen, close, open }: any) {
           <>
             <div className="ModalOverlay">
               <div className="ModalWrapper">
+                <button className="close_button"
+                  onClick={() => {
+                    close();
+                    history.push("/mypage");
+                  }}
+                >close</button>
+
                 <div className="ModalInner ">
-                  <button
-                    onClick={() => {
-                      close();
-                      history.push("/mypage");
-                    }}
-                  >
-                    close
-                  </button>
+                  <div className="modalcard">{modalCard[0]?.text}</div>
+
+                  {modalComments?.map((comment: any, index: any) => (
+                    <div key={index} className="modalcomment">
+                      {comment.User.userName}
+                      {comment.text}
+
+                    </div>
+                  ))}
+
                 </div>
+
               </div>
             </div>
           </>
         </React.Fragment>
-      ) : null}
-    </React.Fragment>
+      ) : null
+      }
+    </React.Fragment >
   );
 }
 

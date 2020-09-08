@@ -1,7 +1,6 @@
 import React from "react";
 import "./MycardList.css";
 import { Link } from "react-router-dom";
-
 function MycardList({ mycard }: any) {
   return (
     <>
@@ -9,16 +8,16 @@ function MycardList({ mycard }: any) {
       <br />
       <div className="mycardlist_wrap">
         {mycard.map((card: any, index: any) => (
-          <Link to={`/cardmodal/${card.id}`}>
-            <div key={index} className="mycard">
+          <div key={index} className="mycard">
+            <Link to={`/cardmodal/${card.id}`}>
               <span className="mycard_text"> {card.text}</span>
               <form>
                 <button className="review_button" type="submit">
                   후기등록
                 </button>
               </form>
-            </div>
-          </Link>
+            </Link>
+          </div>
         ))}
       </div>
     </>
