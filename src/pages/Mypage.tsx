@@ -30,7 +30,9 @@ function Mypage() {
       .then(({ data }) => {
         setcheerCard(data);
         if (data) {
-          console.log("응원한 카드를 성공적으로 가져왔습니다");
+          console.log("응원한 카드를 성공적으로 가져왔습니다")
+        } else {
+          console.log("카드 데이터가 없습니다")
         }
       })
       .catch((err) => console.log(err));
@@ -40,7 +42,7 @@ function Mypage() {
     <>
       <Nav />
       <Dashboard />
-      <MycardList mycard={mycard}></MycardList>
+      <MycardList mycard={mycard} />
       <CheeringList cheerCard={cheerCard} />
     </>
   );

@@ -49,7 +49,6 @@ function CardModal({ isOpen, close, open }: any) {
                   >
                     close
                   </button>
-                  <Comment></Comment>
                 </div>
               </div>
             </div>

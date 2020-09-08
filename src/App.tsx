@@ -26,7 +26,7 @@ function App() {
         <Route exact path="/main" component={Main} />
         <Route exact path="/" component={Intro} />
         <Route exact path="/cardmodal/:id" component={CardModalPage} />
-        <Route component={NotFound} />
+y        <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
