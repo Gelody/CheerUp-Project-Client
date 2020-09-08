@@ -28,7 +28,7 @@ function Login() {
           history.push("/login");
         } else if (res.status === 200) {
           console.log(res);
-          history.push(`/main/${Math.floor(Math.random() * 100)}`);
+          history.push("/main");
         }
       })
       .catch((err) => {
