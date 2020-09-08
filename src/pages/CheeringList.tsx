@@ -9,7 +9,7 @@ function CheeringList({ cheerCard }: any) {
 
                 {cheerCard.map((card: any, index: any) => (
                     <div key={index} className="mycard">
-                        <span className="mycard_text">{card.text}</span>
+                        <span className="mycard_text">{card['Card.text']}</span>
                     </div>
                 ))}
 

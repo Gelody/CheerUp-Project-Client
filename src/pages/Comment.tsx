@@ -43,7 +43,6 @@ function Comment({ cardId }: any) {
                 setComments(data);
                 if (data) {
                     console.log("모든 댓글을 성공적으로 가져왔습니다")
-                    console.log(data)
                 } else {
                     console.log("댓글 데이터가 없습니다")
                 }
