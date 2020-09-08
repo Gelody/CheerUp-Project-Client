@@ -4,6 +4,7 @@ import MycardList from "./MycardList";
 import CheeringList from "./CheeringList";
 import Nav from "./Nav";
 import axios from "axios";
+import CardModalPage from './CardModalPages';
 
 function Mypage() {
   const [mycard, setMycard]: any = useState([]);
@@ -41,6 +42,7 @@ function Mypage() {
       <Nav />
       <Dashboard />
       <MycardList mycard={mycard} />
+      <CardModalPage></CardModalPage>
       <CheeringList cheerCard={cheerCard} />
     </>
   );
