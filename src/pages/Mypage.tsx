@@ -12,30 +12,30 @@ function Mypage() {
 
   useEffect(() => {
     axios
-      .get('/card/get', { headers: { authorization: user } })
+      .get("/card/get", { headers: { authorization: user } })
       .then(({ data }) => {
         setMycard(data);
         if (data) {
-          console.log("나의 카드를 성공적으로 가져왔습니다", data)
+          console.log("나의 카드를 성공적으로 가져왔습니다");
         } else {
-          console.log("카드 데이터가 없습니다")
+          console.log("카드 데이터가 없습니다");
         }
       })
-      .catch(err => console.log(err))
+      .catch((err) => console.log(err));
   }, [user]);
 
   useEffect(() => {
     axios
-      .get('/comment/getCheer', { headers: { authorization: user } })
+      .get("/comment/getCheer", { headers: { authorization: user } })
       .then(({ data }) => {
         setcheerCard(data);
         if (data) {
-          console.log("응원한 카드를 성공적으로 가져왔습니다", data)
+          console.log("응원한 카드를 성공적으로 가져왔습니다")
         } else {
           console.log("카드 데이터가 없습니다")
         }
       })
-      .catch(err => console.log(err))
+      .catch((err) => console.log(err));
   }, []);
 
   return (

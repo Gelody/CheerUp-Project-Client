@@ -10,6 +10,7 @@ import Mypage from "./pages/Mypage";
 import Upload from "./pages/Upload";
 import NotFound from "./pages/NotFound";
 import axios from "axios";
+import CardModalPage from "./pages/CardModalPages";
 
 axios.defaults.baseURL = "http://13.209.17.108:5000";
 
@@ -22,9 +23,10 @@ function App() {
         <Route exact path="/userinfo" component={Userinfo} />
         <Route exact path="/mypage" component={Mypage} />
         <Route exact path="/upload" component={Upload} />
-        <Route exact path="/main/:id" component={Main} />
+        <Route exact path="/main" component={Main} />
         <Route exact path="/" component={Intro} />
-        <Route component={NotFound} />
+        <Route exact path="/cardmodal/:id" component={CardModalPage} />
+y        <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
