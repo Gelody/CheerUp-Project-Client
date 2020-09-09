@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Card.css"
-import Comment from './Comment'
+import Comment from './Comments/MainpageComment'
 
 
 function Card({ cards }: any) {
@@ -10,7 +10,6 @@ function Card({ cards }: any) {
                 {cards.map((card: any, id: any) => (
                     <div key={id} className="maincard_box">
                         <div className="maincard">
-
                             <div className="maincards_text"> {card.text}</div>
 
                         </div>

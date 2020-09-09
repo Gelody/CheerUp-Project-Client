@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SnsShare from "./SnsShare";
+import SnsShare from "../SnsShare";
 import axios from "axios";
 import "./Comment.css";
 
@@ -71,7 +71,7 @@ function Comment({ cardId }: any) {
             className="comment_form"
             value={text}
             onChange={onChangeText}
-            maxLength={50}
+            maxLength={80}
             placeholder="댓글달기.."
           ></textarea>
           <button className="comment_button" type="submit">

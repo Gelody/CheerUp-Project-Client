@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Dashboard from "./Dashboard";
 import MycardList from "./MycardList";
 import CheeringList from "./CheeringList";
-import Nav from "./Nav";
+import Nav from "../Nav";
 import axios from "axios";
 
 function Mypage() {
@@ -22,7 +22,7 @@ function Mypage() {
         }
       })
       .catch((err) => console.log(err));
-  }, [user]);
+  }, []);
 
   useEffect(() => {
     axios
@@ -30,7 +30,7 @@ function Mypage() {
       .then(({ data }) => {
         setcheerCard(data);
         if (data) {
-          console.log("응원한 카드를 성공적으로 가져왔습니다")
+          console.log("응원한 카드를 성공적으로 가져왔습니다", data)
         } else {
           console.log("카드 데이터가 없습니다")
         }
