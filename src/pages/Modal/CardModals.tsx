@@ -13,8 +13,8 @@ function CardModal({ isOpen, close, open }: any) {
   const mycard = {
     headers: { authorization: user },
     params: {
-      id: cardId,
-    },
+      id: cardId
+    }
   };
   useEffect(() => {
     axios
@@ -27,7 +27,7 @@ function CardModal({ isOpen, close, open }: any) {
           console.log(`카드 데이터가 없습니다.`);
         }
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(err);
       });
   }, []);
@@ -43,12 +43,15 @@ function CardModal({ isOpen, close, open }: any) {
           <>
             <div className="ModalOverlay">
               <div className="ModalWrapper">
-                <button className="close_button"
+                <button
+                  className="close_button"
                   onClick={() => {
                     close();
                     history.push("/mypage");
                   }}
-                >close</button>
+                >
+                  close
+                </button>
 
                 <div className="ModalInner ">
                   <div className="modalcard">{modalCard[0]?.text}</div>
@@ -59,17 +62,13 @@ function CardModal({ isOpen, close, open }: any) {
                       {comment.text}
                     </div>
                   ))}
-
-                  {/* <ModalCommentUplaod cardId={modalCard[0]?.id}></ModalCommentUplaod> */}
                 </div>
-
               </div>
             </div>
           </>
         </React.Fragment>
-      ) : null
-      }
-    </React.Fragment >
+      ) : null}
+    </React.Fragment>
   );
 }
 
