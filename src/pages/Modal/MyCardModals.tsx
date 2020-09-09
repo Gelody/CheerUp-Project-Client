@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import ModalCommentUplaod from "./ModalCommentUpload";
-import "./CardModals.css";
+// import ModalCommentUplaod from "./ModalCommentUpload";
+import "./MyCardModals.css";
 import axios from "axios";
 
 function CardModal({ isOpen, close, open }: any) {
@@ -18,7 +18,7 @@ function CardModal({ isOpen, close, open }: any) {
   };
   useEffect(() => {
     axios
-      .get("/card/getUrl", mycard)
+      .get("/card/getOtherUrl", mycard)
       .then(({ data }) => {
         setModalCard(data);
         if (data) {
@@ -60,7 +60,6 @@ function CardModal({ isOpen, close, open }: any) {
                     </div>
                   ))}
 
-                  {/* <ModalCommentUplaod cardId={modalCard[0]?.id}></ModalCommentUplaod> */}
                 </div>
 
               </div>

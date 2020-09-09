@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import { Link } from 'react-router-dom';
-import CardModal from "./CardModals";
+import MyCardModal from "./MyCardModals";
 
 function CardModalPage() {
   const [ismodalOpen, setisModalOpen]: any = useState(false);
@@ -16,11 +16,11 @@ function CardModalPage() {
     <>
       {/* <Link to="/cardmodal" className="CardModalbutton" onClick={openModal}>Modal Open</Link> */}
       {/* <button className="CardModalbutton" onClick={openModal}>Modal Open</button> */}
-      <CardModal
+      <MyCardModal
         isOpen={ismodalOpen}
         close={closeModal}
         open={openModal}
-      ></CardModal>
+      ></MyCardModal>
     </>
   );
 }
