@@ -29,10 +29,17 @@
   border: solid;
   text-align: center;
   width: 100%;
-  height: 60%;
+  height: 20%;
 }
 
 .modalcomment{
   width: 100%;
-  height: 10%;
+  height: 400px;
+  background-color: crimson;
+}
+
+.test{
+  background-color: darkblue;
+  width: 100%;
+  height: 500px;
 }

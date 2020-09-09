@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SnsShare from "./SnsShare";
+import SnsShare from "../SnsShare";
 import axios from "axios";
 import "./Comment.css";
 

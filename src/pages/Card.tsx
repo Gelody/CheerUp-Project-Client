@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Card.css"
-import Comment from './Comment'
+import Comment from './Comments/MainpageComment'
 
 
 function Card({ cards }: any) {

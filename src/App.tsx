@@ -6,11 +6,11 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Userinfo from "./pages/Userinfo";
 import Main from "./pages/Main";
-import Mypage from "./pages/Mypage";
+import Mypage from "./pages/Mypage/Mypage";
 import Upload from "./pages/Upload";
 import NotFound from "./pages/NotFound";
 import axios from "axios";
-import CardModalPage from "./pages/CardModalPages";
+import CardModalPage from "./pages/Modal/CardModalPages";
 
 axios.defaults.baseURL = "http://13.209.17.108:5000";
 

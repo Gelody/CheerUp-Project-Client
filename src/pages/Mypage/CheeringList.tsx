@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from "react-router-dom";
 function CheeringList({ cheerCard }: any) {
     return (
         <>
@@ -9,7 +9,9 @@ function CheeringList({ cheerCard }: any) {
 
                 {cheerCard.map((card: any, index: any) => (
                     <div key={index} className="mycard">
-                        <span className="mycard_text">{card["Card.text"]}</span>
+                        <Link to={`/cardmodal/${card.id}`}>
+                            <span className="mycard_text">{card["Card.text"]}</span>
+                        </Link>
                     </div>
                 ))}
             </div>

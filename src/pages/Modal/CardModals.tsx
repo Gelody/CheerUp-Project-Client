@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import ModalCommentUplaod from "./ModalCommentUpload";
 import "./CardModals.css";
 import axios from "axios";
 
 function CardModal({ isOpen, close, open }: any) {
   const [modalCard, setModalCard]: any = useState([]);
-  const modalComments = modalCard[0]?.Comment
+  const modalComments = modalCard[0]?.Comment;
   const history = useHistory();
   const cardId = window.location.href.split("/")[4];
   const user = JSON.parse(window.sessionStorage.user);
@@ -56,10 +57,10 @@ function CardModal({ isOpen, close, open }: any) {
                     <div key={index} className="modalcomment">
                       {comment.User.userName}
                       {comment.text}
-
                     </div>
                   ))}
 
+                  {/* <ModalCommentUplaod cardId={modalCard[0]?.id}></ModalCommentUplaod> */}
                 </div>
 
               </div>
