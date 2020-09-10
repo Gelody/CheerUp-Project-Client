@@ -16,7 +16,7 @@ function Mypage() {
       .then(({ data }) => {
         setMycard(data);
         if (data) {
-          console.log("나의 카드를 성공적으로 가져왔습니다");
+          console.log("나의 카드를 성공적으로 가져왔습니다", data);
         } else {
           console.log("카드 데이터가 없습니다");
         }
