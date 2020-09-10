@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import SnsShare from "../SnsShare";
 import axios from "axios";
-import "./Comment.css";
+import "./MainpageComment.css";
 
 function Comment({ cardId }: any) {
   const [text, setText] = useState("");
@@ -55,10 +54,9 @@ function Comment({ cardId }: any) {
   return (
     <div className="comment_wrap">
       <div className="comment_box">
-        <SnsShare />
         <br />
         {comments.map((comments: any, index: any) => (
-          <div key={index} className="comments_spanst">
+          <div key={index} className="comments">
             <span className="comments_user_name">{comments.User.userName}</span>
             <span className="user_comment"> {comments.text}</span>
           </div>

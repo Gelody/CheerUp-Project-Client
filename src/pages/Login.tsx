@@ -20,14 +20,12 @@ function Login() {
       .post("/user/login", signInInfo)
       // 세션 스토리지에 저장하는 것으로 구현
       .then((res) => {
-        console.log(JSON.stringify(res.data.token));
         sessionStorage.setItem("user", JSON.stringify(res.data.token));
         setIsSignin(true);
         if (res.status === 403) {
           alert("존재하지 않는 아이디입니다.");
           history.push("/login");
         } else if (res.status === 200) {
-          console.log(res);
           history.push("/main");
         }
       })
