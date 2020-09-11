@@ -9,16 +9,8 @@ function CommentDelete({ cardId, commentId }: any) {
     const onSubmit = () => {
         axios
             .post('/comment/delete', commentData, { headers: { authorization: user } })
-            // .then((data) => {
-            //     if (data) {
-            //         console.log(data)
-            //         alert("댓글이 삭제되었습니다.")
-            //     } else {
-            //         alert("댓글 삭제에 문제가 있습니다.")
-            //     }
-            // })
-            .catch(err => console.log(err))
     }
+
     return (
         <>
             <form onSubmit={onSubmit}>

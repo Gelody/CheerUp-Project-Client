@@ -9,18 +9,9 @@ function MycardUpdate({ cardId }: any) {
 
     // 카드 수정 요청
     const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-        e.preventDefault();
         axios
             .post("/card/update", cardData, { headers: { authorization: user } })
-            .then((res) => {
-                if (res.status === 200) {
-                    alert("카드가 수정되었습니다.");
-                } else {
-                    alert("카드 수정에 문제가 있습니다.");
-                }
-            })
-            .catch(err => console.log(err))
-    };
+    }
 
     const onChangeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setText(e.target.value);
