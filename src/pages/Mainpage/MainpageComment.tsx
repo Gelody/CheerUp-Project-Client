@@ -1,7 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./MainpageComment.css";
 
+// 메인페이지의 댓글란(댓글 업로드 & 모든 댓글 요청)
 function Comment({ cardId }: any) {
   const [text, setText] = useState("");
   const [comments, setComments]: any = useState([]);
@@ -15,7 +17,7 @@ function Comment({ cardId }: any) {
     },
   };
 
-  // 댓글 등록 요청
+  // 댓글 업로드 요청
   const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     axios
@@ -23,11 +25,11 @@ function Comment({ cardId }: any) {
         headers: { authorization: user },
       })
       .then((res) => {
-        if (res.status === 200) {
-          alert("댓글이 등록되었습니다.");
-        } else {
-          alert("댓글 등록에 문제가 있습니다.");
-        }
+        // if (res.status === 200) {
+        //   alert("댓글이 등록되었습니다.");
+        // } else {
+        //   alert("댓글 등록에 문제가 있습니다.");
+        // }
       })
       .catch((err) => console.log(err));
   };
@@ -36,17 +38,17 @@ function Comment({ cardId }: any) {
     setText(e.target.value);
   };
 
-  // 모든 댓글 받아오는 요청
+  // 댓글 받아오는 요청
   useEffect(() => {
     axios
       .get("/comment/get", comment_get_Data)
       .then(({ data }) => {
         setComments(data);
-        if (data) {
-          console.log("모든 댓글을 성공적으로 가져왔습니다");
-        } else {
-          console.log("댓글 데이터가 없습니다");
-        }
+        // if (data) {
+        //   console.log("모든 댓글을 성공적으로 가져왔습니다");
+        // } else {
+        //   console.log("댓글 데이터가 없습니다");
+        // }
       })
       .catch((err: any) => console.log(err));
   }, []);

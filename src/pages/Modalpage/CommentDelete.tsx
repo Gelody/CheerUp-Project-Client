@@ -2,12 +2,10 @@ import React from "react";
 import axios from "axios";
 
 function CommentDelete({ cardId, commentId }: any) {
-
     const commentData = { card_id: cardId, comment_id: commentId }
     const user = JSON.parse(window.sessionStorage.user);
-    console.log("카드아이디", cardId)
-    console.log("코멘츠", commentId)
 
+    // 댓글 삭제 요청
     const onSubmit = () => {
         axios
             .post('/comment/delete', commentData, { headers: { authorization: user } })

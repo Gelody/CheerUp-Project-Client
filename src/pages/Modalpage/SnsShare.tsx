@@ -3,6 +3,7 @@ import './SnsShare.css'
 const url = (window.location.href);
 const title = "Cheer-Up!"
 
+// SNS 공유 기능들
 function SnsShare() {
 
     const naverShare = ((e: any) => {

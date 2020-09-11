@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./CardModal.css";
 import MyCardDelete from "./CardDelete";
@@ -7,7 +8,8 @@ import CommentUpload from "./CommentUpload";
 import CardUpdate from "./CardUpdate";
 import CommentDelete from "./CommentDelete";
 
-function CardModal({ modalCard, isOpen, close, open, ismyCard, verifyUser, myId }: any) {
+// 카드 모달 (버튼들, 카드 수정, 카드 삭제, 댓글 등록, 댓글 삭제)
+function CardModal({ modalCard, isOpen, open, close, ismyCard, verifyUser, myId }: any) {
     const modalComments = modalCard[0]?.Comment;
     const history = useHistory();
 
@@ -28,9 +30,7 @@ function CardModal({ modalCard, isOpen, close, open, ismyCard, verifyUser, myId 
                     <>
                         <div className="ModalOverlay">
                             <div className="modal_Wrapper">
-
                                 <div className="modal_Inner ">
-
 
                                     <div className="button_box">
                                         <button className="close_button"

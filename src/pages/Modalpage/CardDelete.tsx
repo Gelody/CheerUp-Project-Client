@@ -5,17 +5,19 @@ function MycardDelete({ cardId }: any) {
 
     const cardData = { id: cardId }
     const user = JSON.parse(window.sessionStorage.user);
+
+    // 카드 삭제 요청
     const onSubmit = () => {
         axios
             .post('/card/delete', cardData, { headers: { authorization: user } })
-            .then((data) => {
-                if (data) {
-                    alert("카드가 삭제되었습니다.")
-                } else {
-                    alert("카드 삭제에 문제가 있습니다.")
-                }
-            })
-            .catch(err => console.log(err))
+        //         .then((data) => {
+        //             if (data) {
+        //                 alert("카드가 삭제되었습니다.")
+        //             } else {
+        //                 alert("카드 삭제에 문제가 있습니다.")
+        //             }
+        //         })
+        //         .catch(err => console.log(err))
     }
     return (
         <>

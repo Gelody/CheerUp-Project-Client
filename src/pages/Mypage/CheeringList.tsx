@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+
+// 내가 응원 한 카드 리스트
 function CheeringList({ cheerCard }: any) {
     return (
         <>

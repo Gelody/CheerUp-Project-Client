@@ -6,6 +6,7 @@ import notificationImg from "../images/notification.png";
 import uploadImg from "../images/upload.png";
 import "./Nav.css";
 
+// 네비게이션 바
 function Nav() {
   return (
     <>

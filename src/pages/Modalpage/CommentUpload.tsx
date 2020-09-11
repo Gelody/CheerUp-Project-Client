@@ -7,7 +7,7 @@ function CommentUpload({ cardId }: any) {
     const [text, setText] = useState("");
     const comment_upload = { text: text, id: cardId };
 
-    // console.log("카드아이디", cardId)
+
     // 댓글 등록 요청
     const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
         e.preventDefault();

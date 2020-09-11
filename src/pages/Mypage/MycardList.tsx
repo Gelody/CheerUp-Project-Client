@@ -1,6 +1,8 @@
 import React from "react";
 import "./MycardList.css";
 import { Link } from "react-router-dom";
+
+// 나의 응원 카드 리스트
 function MycardList({ mycard }: any) {
   return (
     <>
