@@ -14,7 +14,7 @@ function Signup() {
   const signUpInfo = {
     userId: email,
     userPassword: password,
-    userName: userName,
+    userName: userName
   };
   const history = useHistory();
 
@@ -26,16 +26,16 @@ function Signup() {
       : console.log({ signUpInfo });
     axios
       .post("/user/join", signUpInfo)
-      .then((res) => {
+      .then(res => {
         if (res.status === 409) {
           alert("계정이 이미 존재합니다.");
-          history.push(`/main/${Math.floor(Math.random() * 100)}`);
+          history.push("/signup");
         } else if (res.status === 200) {
           alert("가입이 완료되었습니다.");
           history.push("/login");
         }
       })
-      .catch((err) => console.log(err));
+      .catch(err => console.log(err));
   };
 
   // input 값 state 담기
@@ -95,8 +95,8 @@ function Signup() {
         {passwordErr ? (
           <p className="password-feedback">비밀번호가 일치하지 않습니다.</p>
         ) : (
-            <p></p>
-          )}
+          <p></p>
+        )}
         <button className="signup_button" type="submit">
           가입하기
         </button>

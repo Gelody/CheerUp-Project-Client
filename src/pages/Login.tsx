@@ -25,11 +25,14 @@ function Login() {
         if (res.status === 403) {
           alert("존재하지 않는 아이디입니다.");
           history.push("/login");
-        } else if (res.status === 200) {
+        } else if (res.status === 200 && res.data.age) {
           history.push("/main");
+        } else if (!res.data.age) {
+          alert("회원 정보가 없습니다.");
+          history.push("/userinfo");
         }
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(err);
         setIsSignin(false);
         setError(err.message);
