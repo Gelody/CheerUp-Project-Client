@@ -16,8 +16,8 @@
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
     background-color: #fff;
     border-radius: 10px;
-    width: 40%;
-    height: 60%;
+    width: 50%;
+    height: 70%;
     top: 50%;
     transform: translateY(-50%);
     margin:auto;
@@ -75,7 +75,14 @@
   top: 20%;
 }
 
-.card_delete{
+.card_delete_button{
+  background-color:#ffffff;
+  font-size: 1.8vh;
+  float: right;
+  cursor: pointer;
+}
+
+.update_button{
   background-color:#ffffff;
   font-size: 1.8vh;
   float: right;

@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 
 function MycardDelete({ cardId }: any) {
-    console.log(cardId)
+
     const cardData = { id: cardId }
     const user = JSON.parse(window.sessionStorage.user);
     const onSubmit = () => {
@@ -20,7 +20,7 @@ function MycardDelete({ cardId }: any) {
     return (
         <>
             <form onSubmit={onSubmit}>
-                <button className="card_delete" type="submit">카드삭제하기</button>
+                <button className="card_delete_button" type="submit">카드삭제하기</button>
             </form>
         </>
     )
