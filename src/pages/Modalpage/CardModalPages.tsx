@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import CardModal from "./CardModal";
@@ -16,31 +17,32 @@ function CardModalPage() {
     },
   };
 
+  // 로그인한 유저의 id 요청
   useEffect(() => {
     axios
       .get("/user/getid", { headers: { authorization: user } })
       .then(({ data }) => {
         setmyId(data);
-        if (data) {
-          console.log("유저 아이디를 성공적으로 받았습니다", data);
-        } else {
-          console.log("유저의 아이디 데이터가 없습니다");
-        }
+        // if (data) {
+        //   console.log("유저 아이디를 성공적으로 받았습니다", data);
+        // } else {
+        //   console.log("유저의 아이디 데이터가 없습니다");
+        // }
       })
       .catch((err) => console.log(err));
   }, []);
 
-
+  // 내 모든 카드들 요청
   useEffect(() => {
     axios
       .get("/card/getOtherUrl", mycard)
       .then(({ data }) => {
         setModalCard(data);
-        if (data) {
-          console.log(`모달카드를 잘 받았습니다.`, data);
-        } else {
-          console.log(`카드 데이터가 없습니다.`);
-        }
+        // if (data) {
+        //   console.log(`모달카드를 잘 받았습니다.`, data);
+        // } else {
+        //   console.log(`카드 데이터가 없습니다.`);
+        // }
       })
       .catch((err) => {
         console.log(err);
@@ -50,6 +52,7 @@ function CardModalPage() {
   const openModal = () => {
     setisModalOpen(true);
   };
+
   const closeModal = () => {
     setisModalOpen(false);
   };

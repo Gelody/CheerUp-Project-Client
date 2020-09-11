@@ -3,6 +3,7 @@ import "./Userinfo.css";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
+// 회원 추가 정보 입력 페이지(나이, 성별, 관심사)
 function Userinfo() {
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("");

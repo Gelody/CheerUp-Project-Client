@@ -7,23 +7,13 @@ function CommentUpload({ cardId }: any) {
     const [text, setText] = useState("");
     const comment_upload = { text: text, id: cardId };
 
-    // console.log("카드아이디", cardId)
+
     // 댓글 등록 요청
     const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-        e.preventDefault();
-
         axios
             .post("/comment/create", comment_upload, {
                 headers: { authorization: user },
             })
-            .then((res) => {
-                if (res.status === 200) {
-                    alert("댓글이 등록되었습니다.");
-                } else {
-                    alert("댓글 등록에 문제가 있습니다.");
-                }
-            })
-            .catch((err) => console.log(err));
     };
 
     const onChangeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {

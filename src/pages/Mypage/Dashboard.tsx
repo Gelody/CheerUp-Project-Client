@@ -2,9 +2,9 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import "./Dashboard.css";
 
+// 마이페이지에서의 대쉬보드(응원 받거나 한 숫자 카운트, 로그아웃)
 function Dashboard({ cheeringCount, cheeredCount }: any) {
   const history = useHistory();
-
 
   return (
     <>

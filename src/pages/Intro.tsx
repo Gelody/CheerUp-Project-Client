@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Intro.css";
 
+// 인트로 페이지
 function Intro() {
   return (
     <>
