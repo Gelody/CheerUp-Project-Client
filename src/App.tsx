@@ -25,8 +25,8 @@ function App() {
         <Route exact path="/upload" component={Upload} />
         <Route exact path="/main" component={Main} />
         <Route exact path="/" component={Intro} />
-        <Route exact path="/cardmodal/:id" component={CardModalPage} />
-y        <Route component={NotFound} />
+        <Route exact path="/cardmodalpages/:id" component={CardModalPage} />
+        <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
