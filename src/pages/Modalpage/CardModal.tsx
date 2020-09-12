@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "./CardModal.css";
 import MyCardDelete from "./CardDelete";
@@ -13,15 +13,12 @@ import Mypage from "../Mypage/Mypage"
 function CardModal({ modalCard, isOpen, open, close, verifyUser, ismyCard }: any) {
     const modalComments = modalCard[0]?.Comment;
     const history = useHistory();
+    const [updateClick, setUpdateClick]: any = useState(false); // 카드 수정 버튼 클릭 상태 관리
 
 
     useEffect(() => {
         open();
     }, []);
-
-    useEffect(() => {
-        verifyUser();
-    }, [])
 
     return (
         < React.Fragment >
@@ -31,7 +28,6 @@ function CardModal({ modalCard, isOpen, open, close, verifyUser, ismyCard }: any
                         <>
                             <Mypage></Mypage>
                             {verifyUser()}
-                            {console.log(ismyCard)}
                             <div className="ModalOverlay">
                                 <div className="modal_Wrapper">
                                     <div className="modal_Inner ">
@@ -45,23 +41,21 @@ function CardModal({ modalCard, isOpen, open, close, verifyUser, ismyCard }: any
                                             >close</button>
                                             <SNSShare></SNSShare>
                                             {ismyCard ? (
-                                                <button className="nav_update_button">카드수정하기</button>) : null
+                                                <button onClick={() => setUpdateClick(true)}
+                                                    className="nav_update_button">카드수정하기</button>) : null
                                             }
-
                                             {ismyCard ? (
                                                 <MyCardDelete cardId={modalCard[0]?.id}></MyCardDelete>) : null
                                             }
-
                                         </div>
+
+                                        {updateClick ? (
+                                            <CardUpdate cardId={modalCard[0]?.id} cardText={modalCard[0]?.text}></CardUpdate>) : null
+                                        }
 
                                         <div className="modal_card">
                                             <div className="modal_card_text">{modalCard[0]?.text}</div>
                                         </div>
-
-                                        {ismyCard ? (
-                                            <CardUpdate cardId={modalCard[0]?.id} cardText={modalCard[0]?.text}></CardUpdate>) : null
-                                        }
-
 
                                         <div className="modal_comment_box">
                                             {modalComments?.map((comment: any, index: any) => (
