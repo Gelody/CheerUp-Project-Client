@@ -4,9 +4,9 @@ import axios from "axios";
 import CardModal from "./CardModal";
 
 function CardModalPage() {
+  const [ismyCard, setisMyCard]: any = useState(false);
   const [myId, setmyId]: any = useState([]);
   const [ismodalOpen, setisModalOpen]: any = useState(false);
-  const [ismyCard, setisMyCard]: any = useState(false);
   const [modalCard, setModalCard]: any = useState([]);
   const cardId = window.location.href.split("/")[4];
   const user = JSON.parse(window.sessionStorage.user);
@@ -58,23 +58,20 @@ function CardModalPage() {
   };
 
   const verifyUser = () => {
-    setisMyCard(true);
+    if (myId === modalCard[0]?.user_Id) {
+      setisMyCard(true);
+    }
   }
-  // ismyCard에 true가 나와야 합니다. 
 
-  // console.log("이즈마이카드", ismyCard)
-  // console.log("로그인한 유저아이디", myId)
-  // console.log("모달카드아이디", modalCard[0]?.user_Id)
   return (
     <>
       <CardModal
-        myId={myId}
         isOpen={ismodalOpen}
         close={closeModal}
         open={openModal}
-        // ismyCard={ismyCard}
-        verifyUser={verifyUser}
         modalCard={modalCard}
+        ismyCard={ismyCard}
+        verifyUser={verifyUser}
       ></CardModal>
     </>
   );

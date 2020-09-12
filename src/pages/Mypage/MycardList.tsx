@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 // 나의 응원 카드 리스트
 function MycardList({ mycard }: any) {
-  const isLogin = true;
+  const ismyCard = true;
 
   return (
     <>
