@@ -7,6 +7,7 @@ import SNSShare from "./SnsShare";
 import CommentUpload from "./CommentUpload";
 import CardUpdate from "./CardUpdate";
 import CommentDelete from "./CommentDelete";
+import Mypage from "../Mypage/Mypage"
 
 // 카드 모달 (버튼들, 카드 수정, 카드 삭제, 댓글 등록, 댓글 삭제)
 function CardModal({ modalCard, isOpen, open, close, ismyCard, verifyUser, myId }: any) {
@@ -16,6 +17,7 @@ function CardModal({ modalCard, isOpen, open, close, ismyCard, verifyUser, myId 
     useEffect(() => {
         open();
     }, []);
+
 
     useEffect(() => {
         if (myId === modalCard[0]?.user_Id) {
@@ -28,6 +30,7 @@ function CardModal({ modalCard, isOpen, open, close, ismyCard, verifyUser, myId 
             {isOpen ? (
                 <React.Fragment>
                     <>
+                        <Mypage></Mypage>
                         <div className="ModalOverlay">
                             <div className="modal_Wrapper">
                                 <div className="modal_Inner ">
@@ -41,7 +44,7 @@ function CardModal({ modalCard, isOpen, open, close, ismyCard, verifyUser, myId 
                                         >close</button>
                                         <SNSShare></SNSShare>
 
-                                        <button className="update_button">카드수정하기</button>
+                                        <button className="nav_update_button">카드수정하기</button>
                                         <MyCardDelete cardId={modalCard[0]?.id}></MyCardDelete>
 
                                         {ismyCard ? (

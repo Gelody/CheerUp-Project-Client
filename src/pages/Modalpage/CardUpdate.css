@@ -1,4 +1,5 @@
 .modal_update_form {
+    border-style: none;
     margin: auto;
     width:99%;
     height:200px;
@@ -11,8 +12,7 @@
 
 .modal_update_button{
     background-color:#ffffff;
-	font-size:20px;
-    padding: 5px 50px;
+    font-size:1.5vw;
     margin : auto;
     display: flex;
     cursor: pointer;

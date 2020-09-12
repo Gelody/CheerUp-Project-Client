@@ -77,14 +77,20 @@
 
 .card_delete_button{
   background-color:#ffffff;
-  font-size: 1.8vh;
+  font-size: 1vw;
   float: right;
   cursor: pointer;
 }
 
-.update_button{
+.nav_update_button{
   background-color:#ffffff;
-  font-size: 1.8vh;
+  font-size: 1vw;
   float: right;
+  cursor: pointer;
+}
+
+.comment_delete_button{
+background-color:#ffffff;
+  font-size: 1vw;
   cursor: pointer;
 }

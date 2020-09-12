@@ -61,6 +61,7 @@ function CardModalPage() {
     setisMyCard(true);
   }
   // ismyCard에 true가 나와야 합니다. 
+
   // console.log("이즈마이카드", ismyCard)
   // console.log("로그인한 유저아이디", myId)
   // console.log("모달카드아이디", modalCard[0]?.user_Id)
@@ -71,7 +72,7 @@ function CardModalPage() {
         isOpen={ismodalOpen}
         close={closeModal}
         open={openModal}
-        ismyCard={ismyCard}
+        // ismyCard={ismyCard}
         verifyUser={verifyUser}
         modalCard={modalCard}
       ></CardModal>

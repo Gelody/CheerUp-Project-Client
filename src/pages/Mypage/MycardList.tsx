@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 // 나의 응원 카드 리스트
 function MycardList({ mycard }: any) {
+  const isLogin = true;
+
   return (
     <>
       <h1 className="mycard_title">내 카드</h1>
