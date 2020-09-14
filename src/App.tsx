@@ -11,6 +11,7 @@ import Upload from "./pages/Upload";
 import NotFound from "./pages/NotFound";
 import axios from "axios";
 import CardModalPage from "./pages/Modalpage/CardModalPages";
+import ConfirmEmail from "./pages/ConfirmEmail";
 
 axios.defaults.baseURL = "http://13.209.17.108:5000";
 
@@ -25,6 +26,8 @@ function App() {
         <Route exact path="/upload" component={Upload} />
         <Route exact path="/main" component={Main} />
         <Route exact path="/" component={Intro} />
+        <Route exact path="/cardmodal/:id" component={CardModalPage} />
+        <Route path="/mail/confirmmail" component={ConfirmEmail} />
         <Route exact path="/cardmodalpages/:id" component={CardModalPage} />
         <Route component={NotFound} />
       </Switch>
