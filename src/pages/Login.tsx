@@ -19,15 +19,13 @@ function Login() {
     axios
       .post("/user/login", signInInfo)
       // 세션 스토리지에 저장하는 것으로 구현
-      .then(res => {
-        console.log(JSON.stringify(res.data.token));
+      .then((res) => {
         sessionStorage.setItem("user", JSON.stringify(res.data.token));
         setIsSignin(true);
         if (res.status === 403) {
           alert("존재하지 않는 아이디입니다.");
           history.push("/login");
         } else if (res.status === 200 && res.data.age) {
-          console.log(res);
           history.push("/main");
         } else if (!res.data.age) {
           alert("회원 정보가 없습니다.");

@@ -2,8 +2,10 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import "./Dashboard.css";
 
-function Dashboard() {
+// 마이페이지에서의 대쉬보드(응원 받거나 한 숫자 카운트, 로그아웃)
+function Dashboard({ cheeringCount, cheeredCount }: any) {
   const history = useHistory();
+
   return (
     <>
       <div className="dashborad_wrap">
@@ -22,11 +24,11 @@ function Dashboard() {
         <br />
         <li>
           총 받은 응원 수 누적데이터
-          <p>지금까지 ~</p>
+          <p className="Total_Count">지금까지 총 {cheeredCount} 개의 응원을 받았습니다.</p>
         </li>
         <li>
           총 응원 한 수 누적데이터
-          <p>지금까지 ~</p>
+          <p className="Total_Count">지금까지 총 {cheeringCount[0]?.Commentcount} 개의 응원을 했습니다.</p>
         </li>
       </div>
     </>

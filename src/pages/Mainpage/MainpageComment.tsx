@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
-import SnsShare from "../SnsShare";
 import axios from "axios";
-import "./Comment.css";
+import "./MainpageComment.css";
 
+// 메인페이지의 댓글란(댓글 업로드 & 모든 댓글 요청)
 function Comment({ cardId }: any) {
   const [text, setText] = useState("");
   const [comments, setComments]: any = useState([]);
@@ -16,38 +17,29 @@ function Comment({ cardId }: any) {
     },
   };
 
-  // 댓글 등록 요청
+  // 댓글 업로드 요청
   const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-    e.preventDefault();
     axios
       .post("/comment/create", comment_upload_Data, {
         headers: { authorization: user },
       })
-      .then((res) => {
-        if (res.status === 200) {
-          alert("댓글이 등록되었습니다.");
-        } else {
-          alert("댓글 등록에 문제가 있습니다.");
-        }
-      })
-      .catch((err) => console.log(err));
   };
 
   const onChangeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
   };
 
-  // 모든 댓글 받아오는 요청
+  // 댓글 받아오는 요청
   useEffect(() => {
     axios
       .get("/comment/get", comment_get_Data)
       .then(({ data }) => {
         setComments(data);
-        if (data) {
-          console.log("모든 댓글을 성공적으로 가져왔습니다");
-        } else {
-          console.log("댓글 데이터가 없습니다");
-        }
+        // if (data) {
+        //   console.log("모든 댓글을 성공적으로 가져왔습니다");
+        // } else {
+        //   console.log("댓글 데이터가 없습니다");
+        // }
       })
       .catch((err: any) => console.log(err));
   }, []);
@@ -55,10 +47,9 @@ function Comment({ cardId }: any) {
   return (
     <div className="comment_wrap">
       <div className="comment_box">
-        <SnsShare />
         <br />
         {comments.map((comments: any, index: any) => (
-          <div key={index} className="comments_spanst">
+          <div key={index} className="comments">
             <span className="comments_user_name">{comments.User.userName}</span>
             <span className="user_comment"> {comments.text}</span>
           </div>

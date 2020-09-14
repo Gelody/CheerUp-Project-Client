@@ -5,12 +5,12 @@ import Intro from "./pages/Intro";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Userinfo from "./pages/Userinfo";
-import Main from "./pages/Main";
+import Main from "./pages/Mainpage/Main";
 import Mypage from "./pages/Mypage/Mypage";
 import Upload from "./pages/Upload";
 import NotFound from "./pages/NotFound";
 import axios from "axios";
-import CardModalPage from "./pages/Modal/CardModalPages";
+import CardModalPage from "./pages/Modalpage/CardModalPages";
 import ConfirmEmail from "./pages/ConfirmEmail";
 
 axios.defaults.baseURL = "http://13.209.17.108:5000";
@@ -28,6 +28,7 @@ function App() {
         <Route exact path="/" component={Intro} />
         <Route exact path="/cardmodal/:id" component={CardModalPage} />
         <Route path="/mail/confirmmail" component={ConfirmEmail} />
+        <Route exact path="/cardmodalpages/:id" component={CardModalPage} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
