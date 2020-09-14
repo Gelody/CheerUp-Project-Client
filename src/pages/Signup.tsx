@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Signup.css";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
@@ -16,7 +16,6 @@ function Signup() {
     userPassword: password,
     userName: userName
   };
-  const history = useHistory();
 
   // 서버 요청 및 비밀번호 검증로직
   const onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
@@ -27,15 +26,19 @@ function Signup() {
     axios
       .post("/user/join", signUpInfo)
       .then(res => {
-        if (res.status === 409) {
-          alert("계정이 이미 존재합니다.");
-          history.push("/signup");
-        } else if (res.status === 200) {
-          alert("가입이 완료되었습니다.");
-          history.push("/login");
+        if (res.status === 200) {
+          alert("가입하신 이메일로 발송된 인증메일을 확인해주세요.");
+          window.location.replace(`https://www.${email.split("@")[1]}`);
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        if (err.response) {
+          console.log(err.response.data);
+          if (err.response.status === 403) {
+            alert("가입된 이메일입니다.");
+          }
+        }
+      });
   };
 
   // input 값 state 담기
