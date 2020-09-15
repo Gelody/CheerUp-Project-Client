@@ -1,0 +1,96 @@
+.modal_Wrapper {
+    background-color: rgba(171, 168, 168, 0.6);
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: auto;
+    outline: 0;
+  }
+  .modal_Inner {
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    border-radius: 10px;
+    width: 50%;
+    height: 70%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin:auto;
+    overflow: scroll;
+  }
+
+.modal_card{
+  overflow-y: scroll;
+  border: solid;
+  width: 100%;
+  height: 500px;
+  text-align: center;
+}
+
+.modal_comment{
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.modal_comment_box{
+  overflow-y: scroll;
+  border: solid;
+  width: 100%;
+  height: 50%;
+}
+
+.modal_comments_username{
+  font-size: 2vh;
+  font-weight: bold;
+  margin-left: 3%;
+}
+
+.modal_comments{
+  font-size: 1.5vh;
+  margin-left: 7%;
+  line-height: 2em;
+}
+
+.button_box{
+  margin-bottom: 3%;
+}
+
+.close_button {
+  background-color:#ffffff;
+  font-size: 1.8vh;
+  float: left;
+  cursor: pointer;
+}
+
+.modal_card_text{
+  font-size:2.5vh;
+  position: relative;
+  line-height: 2em;
+  overflow-y: scroll;
+  top: 20%;
+}
+
+.card_delete_button{
+  background-color:#ffffff;
+  font-size: 1vw;
+  float: right;
+  cursor: pointer;
+}
+
+.nav_update_button{
+  background-color:#ffffff;
+  font-size: 1vw;
+  float: right;
+  cursor: pointer;
+}
+
+.comment_delete_button{
+background-color:#ffffff;
+  font-size: 1vw;
+  cursor: pointer;
+}

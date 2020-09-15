@@ -1,0 +1,51 @@
+.mycardlist_wrap{
+    max-width: 600px;
+    max-height: 300px;
+    width: 70%;
+    height: 30%;
+    margin: auto;
+    border: solid;;
+    text-align: center;
+    overflow-x: scroll;
+    white-space: nowrap;
+    position: relative;
+    padding: 5%;
+    margin-bottom: 5%;
+}
+
+.review_button{
+    background-color:#ffffff;
+    font-size:10%;
+    position: absolute;
+    bottom:15%;
+    cursor: pointer;
+}
+.mycard_text{
+    font-size:10px;
+    position: absolute;
+    line-height: 1.6;
+    max-height: 4.8em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+   top: 40%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   white-space: normal;
+}
+
+.mycard{
+border: solid;
+border-color: black;
+width: 150px;
+height: 150px;
+display: inline-block;
+position: relative;
+margin-right: 10px;
+}
+
+.mycard_title{
+    margin: auto;
+    text-align: center;
+}

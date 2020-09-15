@@ -1,0 +1,23 @@
+.signup_form {
+  border: 1px solid #999;
+  padding: 20px;
+  font-size: 2vw;
+  width: 40%;
+  height: 30px;
+  display: block;
+  margin: 30px auto;
+}
+
+.signup_button {
+  background-color: #ffffff;
+  font-size: 20px;
+  padding: 5px 50px;
+  margin: auto;
+  display: flex;
+  cursor: pointer;
+}
+
+.password-feedback {
+  color: red;
+  text-align: center;
+}

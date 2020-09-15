@@ -1,0 +1,19 @@
+.modal_update_form {
+    border-style: none;
+    margin: auto;
+    width:99%;
+    height:200px;
+	background:rgb(255, 255, 255);
+    text-align: center;
+    font-size: 2vw;
+    font-family: sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.modal_update_button{
+    background-color:#ffffff;
+    font-size:1.5vw;
+    margin : auto;
+    display: flex;
+    cursor: pointer;
+}
