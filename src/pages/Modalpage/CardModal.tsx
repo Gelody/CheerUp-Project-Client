@@ -15,13 +15,12 @@ function CardModal({ modalCard, isOpen, open, close, verifyUser, ismyCard }: any
     const history = useHistory();
     const [updateClick, setUpdateClick]: any = useState(false); // 카드 수정 버튼 클릭 상태 관리
 
-
     useEffect(() => {
         open();
     }, []);
 
     return (
-        < React.Fragment >
+        <>
             {
                 isOpen ? (
                     <React.Fragment >
@@ -74,7 +73,7 @@ function CardModal({ modalCard, isOpen, open, close, verifyUser, ismyCard }: any
                     </React.Fragment >
                 ) : null
             }
-        </React.Fragment >
+        </>
     );
 }
 
