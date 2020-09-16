@@ -96,11 +96,13 @@ function CardModal({
                         </span>
                         <span className="modal_comments">{comment.text}</span>
 
-                        <CommentDelete
-                          cardId={modalCard[0]?.id}
-                          comments={modalCard[0]?.Comment}
-                          commentId={comment.id}
-                        ></CommentDelete>
+                        {ismyCard ? (
+                          <CommentDelete
+                            cardId={modalCard[0]?.id}
+                            comments={modalCard[0]?.Comment}
+                            commentId={comment.id}
+                          ></CommentDelete>
+                        ) : null}
                       </div>
                     ))}
                   </div>
