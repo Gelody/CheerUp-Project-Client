@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./CardUpdate.css";
-import { useHistory } from "react-router-dom";
 
 function MycardUpdate({ cardId }: any) {
-  const history = useHistory();
   const [text, setText] = useState("");
   const user = JSON.parse(window.sessionStorage.user);
   const cardData = { text: text, id: cardId };
@@ -17,7 +15,7 @@ function MycardUpdate({ cardId }: any) {
       .then((res) => {
         if (res.status === 200) {
           alert("카드가 수정되었습니다.");
-          history.push("/mypage");
+          window.location.replace(cardId);
         } else {
           alert("카드 수정에 문제가 있습니다.");
         }

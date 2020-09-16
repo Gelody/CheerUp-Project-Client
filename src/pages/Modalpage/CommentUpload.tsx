@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./CommentUpload.css";
-import { useHistory } from "react-router-dom";
 
 function CommentUpload({ cardId }: any) {
-  const history = useHistory();
   const user = JSON.parse(window.sessionStorage.user);
   const [text, setText] = useState("");
   const comment_upload = { text: text, id: cardId };
@@ -19,7 +17,7 @@ function CommentUpload({ cardId }: any) {
       .then((res) => {
         if (res.status === 200) {
           alert("댓글이 등록되었습니다.");
-          history.push("/mypage");
+          window.location.replace(cardId);
         } else {
           alert("댓글 등록에 문제가 있습니다.");
         }

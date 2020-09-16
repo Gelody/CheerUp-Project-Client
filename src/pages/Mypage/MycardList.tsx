@@ -14,7 +14,8 @@ function MycardList({ mycard }: any) {
             <Link to={`/cardmodalpages/${card.id}`}>
               <span className="mycard_text"> {card.text}</span>
             </Link>
-            <Link to={`/reviewmodal/${card.id}/1`} className="review_button">
+            <Link to={`/reviewmodal/${card.id}`} className="review_button">
+              {/* <Link to={`/reviewmodal/${card.id}/1`} className="review_button"> */}
               후기등록
             </Link>
           </div>

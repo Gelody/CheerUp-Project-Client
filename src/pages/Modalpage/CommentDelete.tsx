@@ -1,11 +1,9 @@
 import React from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
 
 function CommentDelete({ cardId, commentId }: any) {
   const commentData = { card_id: cardId, comment_id: commentId };
   const user = JSON.parse(window.sessionStorage.user);
-  const history = useHistory();
 
   // 댓글 삭제 요청
   const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
@@ -17,7 +15,7 @@ function CommentDelete({ cardId, commentId }: any) {
       .then((res) => {
         if (res.status === 200) {
           alert("댓글이 삭제되었습니다.");
-          history.push("/mypage");
+          window.location.replace(cardId);
         } else {
           alert("댓글 삭제에 문제가 있습니다.");
         }
