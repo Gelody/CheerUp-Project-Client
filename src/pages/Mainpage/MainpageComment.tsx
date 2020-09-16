@@ -15,8 +15,8 @@ function Comment({ cardId }: any) {
   const comment_get_Data = {
     headers: { authorization: user },
     params: {
-      id: card.cardId,
-    },
+      id: card.cardId
+    }
   };
 
   // 댓글 업로드 요청
@@ -38,6 +38,7 @@ function Comment({ cardId }: any) {
   };
 
   const onChangeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    e.preventDefault();
     setText(e.target.value);
   };
 
