@@ -4,10 +4,12 @@ import axios from "axios";
 import CardModal from "./CardModal";
 
 function CardModalPage() {
+  const [isReview, setisReview]: any = useState(false);
   const [ismyCard, setisMyCard]: any = useState(false);
   const [myId, setmyId]: any = useState([]);
   const [ismodalOpen, setisModalOpen]: any = useState(false);
   const [modalCard, setModalCard]: any = useState([]);
+  const [review, setReview]: any = useState([]);
   const cardId = window.location.href.split("/")[4];
   const user = JSON.parse(window.sessionStorage.user);
   const mycard = {
@@ -49,6 +51,23 @@ function CardModalPage() {
       });
   }, []);
 
+  // 내 리뷰 요청
+  useEffect(() => {
+    axios
+      .get("./card/getReview", mycard)
+      .then(({ data }) => {
+        setReview(data);
+        // if (data) {
+        //   console.log("후기를 잘 받았습니다", data);
+        // } else {
+        //   console.log("후기 데이터가 없습니다");
+        // }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   const openModal = () => {
     setisModalOpen(true);
   };
@@ -60,8 +79,18 @@ function CardModalPage() {
   const verifyUser = () => {
     if (myId === modalCard[0]?.user_Id) {
       setisMyCard(true);
+    } else {
+      setisMyCard(false);
     }
-  }
+  };
+
+  const reviewCheck = () => {
+    if (review.review === null) {
+      setisReview(false);
+    } else {
+      setisReview(true);
+    }
+  };
 
   return (
     <>
@@ -72,6 +101,9 @@ function CardModalPage() {
         modalCard={modalCard}
         ismyCard={ismyCard}
         verifyUser={verifyUser}
+        reviewCheck={reviewCheck}
+        review={review}
+        isReview={isReview}
       ></CardModal>
     </>
   );

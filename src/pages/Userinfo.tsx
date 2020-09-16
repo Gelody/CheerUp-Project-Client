@@ -12,7 +12,7 @@ function Userinfo() {
   const userInfo = {
     age: age,
     gender: gender,
-    interest: interest
+    interest: interest,
   };
   const history = useHistory();
 
@@ -20,7 +20,7 @@ function Userinfo() {
     e.preventDefault();
     axios
       .post("/user/info", userInfo, { headers: { authorization: user } })
-      .then(res => {
+      .then((res) => {
         if (res.status === 200) {
           alert("저장되었습니다.");
           history.push("/main");
@@ -28,7 +28,7 @@ function Userinfo() {
           alert("회원정보 저장에 문제가 있습니다.");
         }
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
 
   const onChangeAge = (e: React.ChangeEvent<HTMLSelectElement>) => {

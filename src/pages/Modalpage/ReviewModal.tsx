@@ -1,6 +1,5 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState } from "react";
-import ReviewUpload from "./ReviewUpload";
+import ReviewUpload from "../Modalpage/ReviewUpload";
 
 function ReviewModal() {
   const [ismodalOpen, setisModalOpen]: any = useState(false);

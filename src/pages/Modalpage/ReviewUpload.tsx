@@ -6,13 +6,30 @@ import axios from "axios";
 
 function ReviewUpload({ isOpen, open, close }: any) {
   const [text, setText] = useState("");
+  const cardId = window.location.href.split("/")[4];
+  const cardData = { text: text, id: cardId };
+  const user = JSON.parse(window.sessionStorage.user);
   const history = useHistory();
+
   useEffect(() => {
     open();
   }, []);
 
   const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-    // axios.post("/card/update", cardData, { headers: { authorization: user } });
+    e.preventDefault();
+    axios
+      .post("/card/reviewUpdate", cardData, {
+        headers: { authorization: user },
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          alert("후기가 등록 되었습니다.");
+          history.push("/login");
+        } else {
+          alert("후기 등록에 문제가 있습니다.");
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   const onChangeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
