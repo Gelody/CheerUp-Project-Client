@@ -10,6 +10,7 @@ import Mypage from "./pages/Mypage/Mypage";
 import Upload from "./pages/Upload";
 import NotFound from "./pages/NotFound";
 import axios from "axios";
+import ReviewModal from "./pages/Modalpage/ReviewModal";
 import CardModalPage from "./pages/Modalpage/CardModalPages";
 import ConfirmEmail from "./pages/ConfirmEmail";
 
@@ -29,6 +30,7 @@ function App() {
         <Route exact path="/cardmodal/:id" component={CardModalPage} />
         <Route path="/mail/confirmmail" component={ConfirmEmail} />
         <Route exact path="/cardmodalpages/:id" component={CardModalPage} />
+        <Route eact path="/reviewmodal" component={ReviewModal} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
