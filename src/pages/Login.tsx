@@ -13,8 +13,6 @@ function Login() {
   const signInInfo = { userId: email, userPassword: password };
   const history = useHistory();
 
-  console.log(isSignin);
-  console.log(error);
   // 서버 요청
   const onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();

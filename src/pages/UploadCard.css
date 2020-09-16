@@ -34,7 +34,8 @@
 
 .calendar {
   margin: auto;
-  cursor: pointer;
+  margin-top: 3%;
+  display: flex;
 }
 
 .calendar_title {

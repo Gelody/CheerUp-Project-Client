@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Card.css";
 import Comment from "./MainpageComment";
 
@@ -20,7 +20,10 @@ function Card({ cards }: any) {
         {cards.map((card: any, id: any) => (
           <div key={id} className="maincard_box">
             <div className="maincard">
-              <div className="maincards_text"> {card.text}</div>
+              <div className="maincards_date">
+                {card.D_day}까지 응원 해주세요
+              </div>
+              <div className="maincards_text">{card.text}</div>
             </div>
             <div className="main_review_box">
               <span className="main_review_text">
