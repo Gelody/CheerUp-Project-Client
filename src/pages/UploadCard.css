@@ -1,30 +1,48 @@
 .upload_form {
-    border-style: none;
-    margin: auto;
-    width:99%;
-    height:300px;
-	background:rgb(255, 255, 255);
-    text-align: center;
-    font-size: 2vw;
-    font-family: sans-serif;
-    color: rgb(0, 0, 0);
+  border-style: none;
+  margin: auto;
+  margin-bottom: 3%;
+  width: 99%;
+  height: 300px;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 2vw;
+  font-family: sans-serif;
+  color: rgb(0, 0, 0);
+  border-bottom: solid;
 }
 
 .container {
-border: solid;
-    width:70%;
-    height:50%;
-    margin: auto;
-    margin-top: 3%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+  border: solid;
+  width: 70%;
+  height: 50%;
+  margin: auto;
+  margin-top: 3%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 }
 
 .upload_button {
-    background-color:#ffffff;
-	font-size: 2vw;
-    padding: 5px 30px;
-    margin : auto;
-    display: flex;
-    cursor: pointer;
+  background-color: #ffffff;
+  font-size: 2vw;
+  padding: 5px 30px;
+  margin: auto;
+  margin-top: 3%;
+  display: flex;
+  cursor: pointer;
+}
+
+.calendar {
+  margin: auto;
+  margin-top: 3%;
+  display: flex;
+}
+
+.calendar_title {
+  margin: auto;
+  margin-bottom: 3%;
+  text-align: center;
+  font-size: 1.5vw;
+  font-family: sans-serif;
+  color: rgb(0, 0, 0);
 }

@@ -54,7 +54,9 @@ function CardModal({
                     >
                       close
                     </button>
+
                     <SNSShare></SNSShare>
+
                     {ismyCard ? (
                       <button
                         onClick={() => setUpdateClick(true)}
@@ -76,10 +78,17 @@ function CardModal({
                   ) : null}
 
                   <div className="modal_card">
+                    <div className="modal_card_date">
+                      {modalCard[0]?.D_day}까지 응원 해주세요
+                    </div>
+
+                    <br />
+
                     <span className="modal_card_text">
                       {modalCard[0]?.text}
                     </span>
                   </div>
+
                   {isReview ? (
                     <div className="modal_review_box">
                       <span className="review_text">
@@ -94,13 +103,16 @@ function CardModal({
                         <span className="modal_comments_username">
                           {comment.User.userName}
                         </span>
+
                         <span className="modal_comments">{comment.text}</span>
 
-                        <CommentDelete
-                          cardId={modalCard[0]?.id}
-                          comments={modalCard[0]?.Comment}
-                          commentId={comment.id}
-                        ></CommentDelete>
+                        {ismyCard ? (
+                          <CommentDelete
+                            cardId={modalCard[0]?.id}
+                            comments={modalCard[0]?.Comment}
+                            commentId={comment.id}
+                          ></CommentDelete>
+                        ) : null}
                       </div>
                     ))}
                   </div>

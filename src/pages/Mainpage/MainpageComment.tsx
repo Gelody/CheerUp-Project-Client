@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 import "./MainpageComment.css";
 
 // 메인페이지의 댓글란(댓글 업로드 & 모든 댓글 요청)
@@ -8,6 +9,7 @@ function Comment({ cardId }: any) {
   const [text, setText] = useState("");
   const [comments, setComments]: any = useState([]);
   const card = { cardId };
+  const history = useHistory();
   const user = JSON.parse(window.sessionStorage.user);
   const comment_upload_Data = { text: text, id: card.cardId };
   const comment_get_Data = {
@@ -20,9 +22,19 @@ function Comment({ cardId }: any) {
   // 댓글 업로드 요청
   const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    axios.post("/comment/create", comment_upload_Data, {
-      headers: { authorization: user }
-    });
+    axios
+      .post("/comment/create", comment_upload_Data, {
+        headers: { authorization: user },
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          alert("댓글이 등록되었습니다.");
+          history.push("/mypage");
+        } else {
+          alert("댓글 등록에 문제가 있습니다.");
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   const onChangeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {

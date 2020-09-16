@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Mypage from "../Mypage/Mypage";
@@ -24,7 +25,7 @@ function ReviewUpload({ isOpen, open, close }: any) {
       .then((res) => {
         if (res.status === 200) {
           alert("후기가 등록 되었습니다.");
-          history.push("/mypage"); // 마이페이지로
+          history.push("/mypage");
         } else {
           alert("후기 등록에 문제가 있습니다.");
         }

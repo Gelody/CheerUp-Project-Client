@@ -5,8 +5,13 @@ import axios from "axios";
 // 카드 업로드 기능
 function UploadCard() {
   const [text, setText] = useState("");
+  const [date, setDate] = useState("");
   const user = JSON.parse(window.sessionStorage.user);
-  const cardData = { text: text, user_Id: "user" };
+  const cardData = {
+    text: text,
+    user_Id: user,
+    D_day: date,
+  };
 
   // 카드 등록 요청
   const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
@@ -27,6 +32,11 @@ function UploadCard() {
     setText(e.target.value);
   };
 
+  // 달력;
+  const onChangeDate = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setDate(e.target.value);
+  };
+
   return (
     <>
       <div className="container">
@@ -36,8 +46,19 @@ function UploadCard() {
             value={text}
             onChange={onChangeText}
             maxLength={300}
-            placeholder="어떤 일에 응원이 필요하신가요?"
+            placeholder="Step1. 어떤 일에 응원이 필요하신가요?"
           ></textarea>
+
+          <p className="calendar_title">
+            Step.2 언제까지 응원이 필요하신지 선택 해 주세요
+          </p>
+
+          <input
+            className="calendar"
+            type="date"
+            onChange={onChangeDate}
+          ></input>
+
           <button className="upload_button" type="submit">
             카드 등록하기
           </button>

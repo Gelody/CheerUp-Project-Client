@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Signup.css";
-import { useHistory } from "react-router-dom";
 import axios from "axios";
 
 function Signup() {
@@ -14,7 +13,7 @@ function Signup() {
   const signUpInfo = {
     userId: email,
     userPassword: password,
-    userName: userName
+    userName: userName,
   };
 
   // 서버 요청 및 비밀번호 검증로직
@@ -25,13 +24,13 @@ function Signup() {
       : console.log({ signUpInfo });
     axios
       .post("/user/join", signUpInfo)
-      .then(res => {
+      .then((res) => {
         if (res.status === 200) {
           alert("가입하신 이메일로 발송된 인증메일을 확인해주세요.");
           window.open(`https://www.${email.split("@")[1]}`);
         }
       })
-      .catch(err => {
+      .catch((err) => {
         if (err.response) {
           console.log(err.response.data);
           if (err.response.status === 403) {

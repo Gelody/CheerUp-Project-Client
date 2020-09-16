@@ -19,7 +19,7 @@ function Login() {
     axios
       .post("/user/login", signInInfo)
       // 세션 스토리지에 저장하는 것으로 구현
-      .then(res => {
+      .then((res) => {
         sessionStorage.setItem("user", JSON.stringify(res.data.token));
         setIsSignin(true);
         if (res.status === 403) {
@@ -32,7 +32,7 @@ function Login() {
           history.push("/userinfo");
         }
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
         setIsSignin(false);
         setError(err.message);
