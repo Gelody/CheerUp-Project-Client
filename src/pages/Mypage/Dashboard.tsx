@@ -15,7 +15,6 @@ function Dashboard({ cheeringCount, cheeredCount }: any) {
       return 1;
     }
   };
-  console.log(count);
 
   return (
     <>
