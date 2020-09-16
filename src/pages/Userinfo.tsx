@@ -18,17 +18,40 @@ function Userinfo() {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
+    console.log(userInfo);
+    console.log(user);
     axios
       .post("/user/info", userInfo, { headers: { authorization: user } })
       .then(res => {
+        if (res) {
+          console.log("있냐 res:", res);
+        }
         if (res.status === 200) {
           alert("저장되었습니다.");
           history.push("/main");
         } else {
-          alert("회원정보 저장에 문제가 있습니다.");
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        if (err.response) {
+          alert("회원정보 저장에 문제가 있습니다.");
+          // 요청이 이루어졌으며 서버가 2xx의 범위를 벗어나는 상태 코드로 응답했습니다.
+          console.log("err:", err);
+          console.log("err.response:", err.response);
+          console.log("데이터:", err.response.data);
+          console.log("상태코드:", err.response.status);
+          console.log("headers:", err.response.headers);
+        } else if (err.request) {
+          // 요청이 이루어 졌으나 응답을 받지 못했습니다.
+          // `error.request`는 브라우저의 XMLHttpRequest 인스턴스 또는
+          // Node.js의 http.ClientRequest 인스턴스입니다.
+          console.log("request:", err.request);
+        } else {
+          // 오류를 발생시킨 요청을 설정하는 중에 문제가 발생했습니다.
+          console.log("Error:", err.message);
+        }
+        console.log("config:", err.config);
+      });
   };
 
   const onChangeAge = (e: React.ChangeEvent<HTMLSelectElement>) => {

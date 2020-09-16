@@ -19,7 +19,7 @@ function Login() {
     axios
       .post("/user/login", signInInfo)
       // 세션 스토리지에 저장하는 것으로 구현
-      .then((res) => {
+      .then(res => {
         sessionStorage.setItem("user", JSON.stringify(res.data.token));
         setIsSignin(true);
         if (res.status === 403) {
@@ -28,7 +28,7 @@ function Login() {
         } else if (res.status === 200 && res.data.age) {
           history.push("/main");
         } else if (!res.data.age) {
-          alert("회원 정보가 없습니다.");
+          alert("추가 회원 정보를 입력해주세요.");
           history.push("/userinfo");
         }
       })
@@ -69,7 +69,9 @@ function Login() {
         <button className="login_button" type="submit">
           로그인
         </button>
-
+        <Link to="/findpassword" className="find_pwd">
+          비밀번호를 잊어버렸나요?
+        </Link>
         <p className="text">또는</p>
 
         <button className="google_button">구글 로그인</button>

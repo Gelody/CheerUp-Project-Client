@@ -12,6 +12,8 @@ import NotFound from "./pages/NotFound";
 import axios from "axios";
 import CardModalPage from "./pages/Modalpage/CardModalPages";
 import ConfirmEmail from "./pages/ConfirmEmail";
+import FindPassword from "./pages/FindPassword";
+import IsValidToken from "./pages/ResetPassword";
 
 axios.defaults.baseURL = "http://13.209.17.108:5000";
 
@@ -27,8 +29,10 @@ function App() {
         <Route exact path="/main" component={Main} />
         <Route exact path="/" component={Intro} />
         <Route exact path="/cardmodal/:id" component={CardModalPage} />
-        <Route path="/mail/confirmmail" component={ConfirmEmail} />
+        <Route exact path="/mail/confirmmail" component={ConfirmEmail} />
         <Route exact path="/cardmodalpages/:id" component={CardModalPage} />
+        <Route exact path="/findpassword" component={FindPassword} />
+        <Route exact path="/mail/isvalidtoken/" component={IsValidToken} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
