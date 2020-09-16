@@ -39,14 +39,6 @@ function ConfirmEmail() {
           console.log("Error:", err.message);
         }
         console.log("config:", err.config);
-
-        // if (err.response.status === 404) {
-        //   alert("이메일 인증에 문제가 있습니다.");
-        // }
-        // // history.push("/signup");
-        // console.log("캐치:", err);
-        // console.log(err.response);
-        // console.log(err.response.status);
       });
   }, []);
 

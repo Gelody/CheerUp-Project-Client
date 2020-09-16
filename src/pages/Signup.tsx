@@ -28,7 +28,7 @@ function Signup() {
       .then(res => {
         if (res.status === 200) {
           alert("가입하신 이메일로 발송된 인증메일을 확인해주세요.");
-          window.location.replace(`https://www.${email.split("@")[1]}`);
+          window.open(`https://www.${email.split("@")[1]}`);
         }
       })
       .catch(err => {
