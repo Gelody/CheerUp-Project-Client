@@ -13,19 +13,20 @@ function Comment({ cardId }: any) {
   const comment_get_Data = {
     headers: { authorization: user },
     params: {
-      id: card.cardId,
-    },
+      id: card.cardId
+    }
   };
 
   // 댓글 업로드 요청
   const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-    axios
-      .post("/comment/create", comment_upload_Data, {
-        headers: { authorization: user },
-      })
+    e.preventDefault();
+    axios.post("/comment/create", comment_upload_Data, {
+      headers: { authorization: user }
+    });
   };
 
   const onChangeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    e.preventDefault();
     setText(e.target.value);
   };
 
