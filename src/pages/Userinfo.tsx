@@ -23,13 +23,9 @@ function Userinfo() {
     axios
       .post("/user/info", userInfo, { headers: { authorization: user } })
       .then(res => {
-        if (res) {
-          console.log("있냐 res:", res);
-        }
         if (res.status === 200) {
           alert("저장되었습니다.");
           history.push("/main");
-        } else {
         }
       })
       .catch(err => {

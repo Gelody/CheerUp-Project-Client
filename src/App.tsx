@@ -10,6 +10,7 @@ import Mypage from "./pages/Mypage/Mypage";
 import Upload from "./pages/Upload";
 import NotFound from "./pages/NotFound";
 import axios from "axios";
+import ReviewModal from "./pages/Modalpage/ReviewModal";
 import CardModalPage from "./pages/Modalpage/CardModalPages";
 import ConfirmEmail from "./pages/ConfirmEmail";
 import FindPassword from "./pages/FindPassword";
@@ -33,6 +34,7 @@ function App() {
         <Route exact path="/cardmodalpages/:id" component={CardModalPage} />
         <Route exact path="/findpassword" component={FindPassword} />
         <Route exact path="/mail/isvalidtoken/" component={IsValidToken} />
+        <Route eact path="/reviewmodal" component={ReviewModal} />
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>

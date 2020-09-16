@@ -1,7 +1,8 @@
-.modal_update_form {
+.review_update_form {
   border-style: none;
   margin: auto;
-  width: 99%;
+  margin-left: 1.5%;
+  width: 95%;
   height: 150px;
   background: rgb(255, 255, 255);
   text-align: center;
@@ -10,7 +11,7 @@
   color: rgb(0, 0, 0);
 }
 
-.modal_update_button {
+.review_update_button {
   background-color: #ffffff;
   font-size: 1.5vw;
   margin: auto;
@@ -18,12 +19,12 @@
   cursor: pointer;
 }
 
-.card_update_container {
+.review_container {
   border: solid;
   width: 70%;
   height: 50%;
   margin: auto;
-  margin-top: 10%;
+  margin-top: 20%;
   margin-bottom: 10%;
   padding-top: 1%;
   padding-bottom: 1%;
