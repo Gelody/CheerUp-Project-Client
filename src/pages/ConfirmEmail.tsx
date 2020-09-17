@@ -54,8 +54,6 @@ function ConfirmEmail() {
   return (
     <div>
       이메일 인증이 완료되었습니다. <p />
-      3초 뒤 자동으로 이동합니다...
-      {url}
     </div>
   );
 }

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./UploadCard.css";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 // 카드 업로드 기능
 function UploadCard() {
+  const history = useHistory();
   const [text, setText] = useState("");
   const [date, setDate] = useState("");
   const user = JSON.parse(window.sessionStorage.user);
@@ -21,6 +23,7 @@ function UploadCard() {
       .then((res) => {
         if (res.status === 200) {
           alert("카드가 등록되었습니다.");
+          history.push("/main");
         } else {
           alert("카드 등록에 문제가 있습니다.");
         }
@@ -55,6 +58,7 @@ function UploadCard() {
 
           <input
             className="calendar"
+            required
             type="date"
             onChange={onChangeDate}
           ></input>

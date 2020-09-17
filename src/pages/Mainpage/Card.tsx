@@ -4,16 +4,6 @@ import Comment from "./MainpageComment";
 
 // 메인페이지의 카드(카드 내용과 댓글)
 function Card({ cards }: any) {
-  // const [isReview, setisReview]: any = useState(false);
-
-  // const reviewCheck = () => {
-  //     if (review.review === null) {
-  //       setisReview(false);
-  //     } else {
-  //       setisReview(true);
-  //     }
-  //   };
-
   return (
     <>
       <div className="maincard_wrapper">
@@ -23,13 +13,18 @@ function Card({ cards }: any) {
               <div className="maincards_date">
                 {card.D_day}까지 응원 해주세요
               </div>
+
               <div className="maincards_text">{card.text}</div>
             </div>
-            <div className="main_review_box">
-              <span className="main_review_text">
-                카드작성자의 후기 :{card.review}
-              </span>
-            </div>
+
+            {card.review ? (
+              <div className="main_review_box">
+                <span className="main_review_text">
+                  카드작성자의 후기 :{card.review}
+                </span>
+              </div>
+            ) : null}
+
             <Comment cardId={card.id}></Comment>
           </div>
         ))}
