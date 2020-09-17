@@ -4,6 +4,10 @@ import Comment from "./MainpageComment";
 
 // 메인페이지의 카드(카드 내용과 댓글)
 function Card({ cards }: any) {
+  if (cards.length === 0) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <div className="maincard_wrapper">
