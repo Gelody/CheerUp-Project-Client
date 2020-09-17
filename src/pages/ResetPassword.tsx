@@ -9,7 +9,7 @@ function IsValidToken() {
   const token = window.location.href.split("=")[1];
   const resetInfo = {
     token: token,
-    newPassword: password
+    newPassword: password,
   };
   const history = useHistory();
 
@@ -27,7 +27,7 @@ function IsValidToken() {
       : console.log({ resetInfo });
     axios
       .post("/mail/resetpassword", resetInfo)
-      .then(res => {
+      .then((res) => {
         if (res.status === 202) {
           alert("비밀번호가 변경되었습니다.");
           history.push("/login");
@@ -35,7 +35,7 @@ function IsValidToken() {
           alert("오류가 발생했습니다. 다시 시도해주세요.");
         }
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err.response);
       });
   };
@@ -57,7 +57,6 @@ function IsValidToken() {
         ></input>
         {passwordErr ? <p>비밀번호가 일치하지 않습니다.</p> : <p> </p>}
         <button type="submit">비밀번호 바꾸기</button>
-        {token}
       </form>
     </>
   );

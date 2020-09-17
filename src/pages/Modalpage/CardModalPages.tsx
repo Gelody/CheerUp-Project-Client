@@ -40,11 +40,11 @@ function CardModalPage() {
       .get("/card/getOtherUrl", mycard)
       .then(({ data }) => {
         setModalCard(data);
-        // if (data) {
-        //   console.log(`모달카드를 잘 받았습니다.`, data);
-        // } else {
-        //   console.log(`카드 데이터가 없습니다.`);
-        // }
+        if (data) {
+          console.log(`모달카드를 잘 받았습니다.`, data);
+        } else {
+          console.log(`카드 데이터가 없습니다.`);
+        }
       })
       .catch((err) => {
         console.log(err);

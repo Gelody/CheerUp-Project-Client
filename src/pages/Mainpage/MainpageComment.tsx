@@ -15,8 +15,8 @@ function Comment({ cardId }: any) {
   const comment_get_Data = {
     headers: { authorization: user },
     params: {
-      id: card.cardId
-    }
+      id: card.cardId,
+    },
   };
 
   // 댓글 업로드 요청
@@ -29,7 +29,7 @@ function Comment({ cardId }: any) {
       .then((res) => {
         if (res.status === 200) {
           alert("댓글이 등록되었습니다.");
-          history.push("/mypage");
+          history.push(`/cardmodalpages/${card.cardId}`);
         } else {
           alert("댓글 등록에 문제가 있습니다.");
         }

@@ -31,11 +31,9 @@ function Signup() {
         }
       })
       .catch((err) => {
-        if (err.response) {
+        if (err.response.status === 403) {
           console.log(err.response.data);
-          if (err.response.status === 403) {
-            alert("가입된 이메일입니다.");
-          }
+          alert("가입된 이메일입니다.");
         }
       });
   };
