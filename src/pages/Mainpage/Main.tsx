@@ -6,7 +6,7 @@ import axios from "axios";
 // 메인페이지, 모든 카드 받아오는 요청
 function Main() {
   const [cards, setCards]: any = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const [isFetching, setIsFetching]: any = useState(false);
 
   const loadData = () => {
