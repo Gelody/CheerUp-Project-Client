@@ -6,7 +6,7 @@ import axios from "axios";
 // 메인페이지, 모든 카드 받아오는 요청
 function Main() {
   const [cards, setCards]: any = useState([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(0);
   const [isFetching, setIsFetching]: any = useState(false);
 
   const loadData = () => {
@@ -24,17 +24,14 @@ function Main() {
           console.log("카드 데이터가 없습니다");
         }
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };
 
   const isScrolling = () => {
-    // console.log("innerHeight:", window.innerHeight);
-    // console.log("scrollTop:", document.documentElement.scrollTop);
-    // console.log("offsetHeight:", document.documentElement.offsetHeight);
     if (
-      window.innerHeight + document.documentElement.scrollTop !==
+      window.innerHeight + Math.floor(document.documentElement.scrollTop) !==
       document.documentElement.offsetHeight
     ) {
       // 제일 하단이 아닐 때는 그냥 리턴

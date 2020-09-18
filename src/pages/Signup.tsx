@@ -7,6 +7,9 @@ function Signup() {
   // Hooks 사용하기
   const [email, setEmail] = useState("");
   const [userName, setUserName] = useState("");
+  const [usableName, setUsableName] = useState(false);
+  const [unusableName, setUnusableName] = useState(false);
+  const [clickVerifyButton, setClickVerifyButton] = useState(false);
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
   const [passwordErr, setPasswordErr] = useState(false);
@@ -14,6 +17,25 @@ function Signup() {
     userId: email,
     userPassword: password,
     userName: userName,
+  };
+  const NameInfo = { userName: userName };
+
+  // 아이디 중복 확인 서버 요청
+  const idCehck = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    console.log(userName);
+    axios
+      .post("/user/checkName", NameInfo)
+      .then((res) => {
+        if (res.status === 200) {
+          setUsableName(true);
+          setClickVerifyButton(true);
+        } else if (res.status === 203) {
+          setUnusableName(true);
+          setClickVerifyButton(false);
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   // 서버 요청 및 비밀번호 검증로직
@@ -56,23 +78,37 @@ function Signup() {
 
   return (
     <>
+      <form onSubmit={idCehck}>
+        <input
+          className="username_form"
+          required
+          type="username"
+          placeholder="닉네임"
+          value={userName}
+          onChange={onChangeUserName}
+        />
+
+        {clickVerifyButton ? (
+          usableName ? (
+            <p className="usable_user">사용가능한 닉네임입니다.</p>
+          ) : null
+        ) : unusableName ? (
+          <p className="unusable_user">이미 사용중인 닉네임입니다.</p>
+        ) : null}
+
+        <button className="username_check_button" type="submit">
+          중복확인
+        </button>
+      </form>
+
       <form onSubmit={onSubmit}>
         <input
           className="signup_form"
           required
           type="email"
-          placeholder="아이디 (이메일 주소)"
+          placeholder="이메일주소"
           value={email}
           onChange={onChangeEamil}
-        />
-
-        <input
-          className="signup_form"
-          required
-          type="username"
-          placeholder="이름"
-          value={userName}
-          onChange={onChangeUserName}
         />
 
         <input
@@ -92,11 +128,13 @@ function Signup() {
           value={passwordCheck}
           onChange={onChangePasswordCheck}
         />
+
         {passwordErr ? (
           <p className="password-feedback">비밀번호가 일치하지 않습니다.</p>
         ) : (
           <p></p>
         )}
+
         <button className="signup_button" type="submit">
           가입하기
         </button>
