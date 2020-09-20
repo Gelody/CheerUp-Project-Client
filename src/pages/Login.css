@@ -1,4 +1,4 @@
-.login_form {
+/* .login_form {
   border: 1px solid #999;
   padding: 20px;
   font-size: 20px;
@@ -6,37 +6,54 @@
   height: 30px;
   display: block;
   margin: 30px auto;
+} */
+.login_form {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  text-align: center;
 }
-
+.login_title {
+  color: #ffffff;
+  margin-top: 2vw;
+}
+.login_input {
+  width: 30vh;
+  height: 4vh;
+  margin-bottom: 1vw;
+  font-size: 20px;
+}
 .login_button {
   background-color: #ffffff;
   font-size: 20px;
   padding: 5px 50px;
-  margin: auto;
-  display: flex;
+  margin-top: 2vw;
+  /* display: flex; */
   cursor: pointer;
 }
 
 .text {
   text-align: center;
   margin-top: 50px;
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .signup_link {
-  background-color: #ffffff;
   margin: auto;
-  color: rgb(0, 0, 0);
-  font-size: 20px;
-  display: flex;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  /* display: flex; */
   justify-content: center;
 }
 
 .find_pwd {
-  background-color: #ffffff;
   margin: 20px;
   color: rgb(0, 0, 0);
   font-size: 15px;
-  display: flex;
+  font-weight: bold;
+  /* display: flex; */
   justify-content: center;
 }
 
@@ -45,7 +62,7 @@
   font-size: 20px;
   padding: 5px 50px;
   margin: auto;
-  display: flex;
+  /* display: flex; */
   cursor: pointer;
 }
 
@@ -54,6 +71,23 @@
   font-size: 20px;
   padding: 5px 50px;
   margin: 30px auto;
-  display: flex;
+  /* display: flex; */
   cursor: pointer;
+}
+.signup_page {
+  background-color: #fff;
+  font-size: 20px;
+  padding: 5px 50px;
+  margin: 2vw;
+  /* display: flex; */
+  cursor: pointer;
+}
+a {
+  color: rgb(255, 255, 255);
+}
+a:link {
+  color: rgb(255, 255, 255);
+}
+a:visited {
+  color: rgb(255, 255, 255);
 }

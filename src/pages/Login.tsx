@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./Login.css";
 import axios from "axios";
+import Background from "./background";
 
 function Login() {
   // input을 담을 상태들과 상태변경 메서드 선언하기
@@ -19,7 +20,7 @@ function Login() {
     axios
       .post("/user/login", signInInfo)
       // 세션 스토리지에 저장하는 것으로 구현
-      .then((res) => {
+      .then(res => {
         sessionStorage.setItem("user", JSON.stringify(res.data.token));
         setIsSignin(true);
         if (res.status === 403) {
@@ -32,7 +33,7 @@ function Login() {
           history.push("/userinfo");
         }
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(err);
         setIsSignin(false);
         setError(err.message);
@@ -49,34 +50,33 @@ function Login() {
 
   return (
     <>
-      <form onSubmit={onSubmit}>
+      <Background></Background>
+      <form onSubmit={onSubmit} className="login_form">
+        <h1 className="login_title">로그인</h1>
         <input
           required
-          className="login_form"
+          className="login_input"
           type="email"
           placeholder="아이디(이메일 주소)"
           onChange={onChangeEmail}
         />
-
+        <br />
         <input
           required
-          className="login_form"
+          className="login_input"
           type="password"
           placeholder="비밀번호"
           onChange={onChangePassword}
         />
-
-        <button className="login_button" type="submit">
-          로그인
-        </button>
+        <br />
         <Link to="/findpassword" className="find_pwd">
           비밀번호를 잊어버렸나요?
         </Link>
-        <p className="text">또는</p>
-
-        <button className="google_button">구글 로그인</button>
-        <button className="kakao_button">카카오 로그인</button>
-
+        <br />
+        <button className="login_button" type="submit">
+          로그인
+        </button>
+        <br />
         <p className="text">계정이 없으신가요?</p>
         <Link to="/signup" className="signup_link">
           회원가입

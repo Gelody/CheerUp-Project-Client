@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Signup.css";
 import axios from "axios";
+import Background from "./background";
 
 function Signup() {
   // input을 담을 상태들과 상태변경 함수 선언하기
@@ -16,7 +17,7 @@ function Signup() {
   const signUpInfo = {
     userId: email,
     userPassword: password,
-    userName: userName,
+    userName: userName
   };
   const NameInfo = { userName: userName };
 
@@ -26,7 +27,7 @@ function Signup() {
     console.log(userName);
     axios
       .post("/user/checkName", NameInfo)
-      .then((res) => {
+      .then(res => {
         if (res.status === 200) {
           setUsableName(true);
           setClickVerifyButton(true);
@@ -35,7 +36,7 @@ function Signup() {
           setClickVerifyButton(false);
         }
       })
-      .catch((err) => console.log(err));
+      .catch(err => console.log(err));
   };
 
   // 서버 요청 및 비밀번호 검증로직
@@ -46,13 +47,13 @@ function Signup() {
       : console.log({ signUpInfo });
     axios
       .post("/user/join", signUpInfo)
-      .then((res) => {
+      .then(res => {
         if (res.status === 200) {
           alert("가입하신 이메일로 발송된 인증메일을 확인해주세요.");
           window.open(`https://www.${email.split("@")[1]}`);
         }
       })
-      .catch((err) => {
+      .catch(err => {
         if (err.response.status === 403) {
           console.log(err.response.data);
           alert("가입된 이메일입니다.");
@@ -78,67 +79,47 @@ function Signup() {
 
   return (
     <>
-      <form onSubmit={idCehck}>
-        <input
-          className="username_form"
-          required
-          type="username"
-          placeholder="닉네임"
-          value={userName}
-          onChange={onChangeUserName}
-        />
+      <Background />
+      <div className="signup_form_wrap">
+        <h1 className="signup_title">회원가입</h1>
 
-        {clickVerifyButton ? (
-          usableName ? (
-            <p className="usable_user">사용가능한 닉네임입니다.</p>
-          ) : null
-        ) : unusableName ? (
-          <p className="unusable_user">이미 사용중인 닉네임입니다.</p>
-        ) : null}
+        <form onSubmit={onSubmit}>
+          <input
+            className="signup_form"
+            required
+            type="email"
+            placeholder="이메일주소"
+            value={email}
+            onChange={onChangeEamil}
+          />
 
-        <button className="username_check_button" type="submit">
-          중복확인
-        </button>
-      </form>
+          <input
+            className="signup_form"
+            required
+            type="password"
+            placeholder="비밀번호"
+            value={password}
+            onChange={onChangePassword}
+          />
 
-      <form onSubmit={onSubmit}>
-        <input
-          className="signup_form"
-          required
-          type="email"
-          placeholder="이메일주소"
-          value={email}
-          onChange={onChangeEamil}
-        />
-
-        <input
-          className="signup_form"
-          required
-          type="password"
-          placeholder="비밀번호"
-          value={password}
-          onChange={onChangePassword}
-        />
-
-        <input
-          className="signup_form"
-          required
-          type="password"
-          placeholder="비밀번호 확인"
-          value={passwordCheck}
-          onChange={onChangePasswordCheck}
-        />
-
-        {passwordErr ? (
-          <p className="password-feedback">비밀번호가 일치하지 않습니다.</p>
-        ) : (
-          <p></p>
-        )}
-
-        <button className="signup_button" type="submit">
-          가입하기
-        </button>
-      </form>
+          <input
+            className="signup_form"
+            required
+            type="password"
+            placeholder="비밀번호 확인"
+            value={passwordCheck}
+            onChange={onChangePasswordCheck}
+          />
+          {passwordErr ? (
+            <p className="password-feedback">비밀번호가 일치하지 않습니다.</p>
+          ) : (
+            <p></p>
+          )}
+          <button className="signup_button" type="submit">
+            가입하기
+          </button>
+        </form>
+      </div>
     </>
   );
 }

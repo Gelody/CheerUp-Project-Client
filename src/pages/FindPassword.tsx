@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Background from "./background";
+import "./FindPassword.css";
 
 function FindPassword() {
   const [email, setEmail] = useState("");
@@ -25,18 +27,22 @@ function FindPassword() {
 
   return (
     <>
-      <form onSubmit={onSubmit}>
-        <input
-          required
-          type="email"
-          className="pwd_eamil"
-          placeholder="가입된 이메일주소"
-          onChange={onChangeEmail}
-        ></input>
-        <button className="pwd_button" type="submit">
-          재설정 메일 보내기
-        </button>
-      </form>
+      <Background />
+      <div className="form_wrap">
+        <h1 className="fpw_title">비밀번호 재설정하기</h1>
+        <form onSubmit={onSubmit}>
+          <input
+            required
+            type="email"
+            className="pwd_email"
+            placeholder="가입된 이메일주소"
+            onChange={onChangeEmail}
+          ></input>
+          <button className="pwd_button" type="submit">
+            재설정 메일 보내기
+          </button>
+        </form>
+      </div>
     </>
   );
 }

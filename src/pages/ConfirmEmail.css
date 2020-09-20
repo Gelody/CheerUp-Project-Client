@@ -1,0 +1,11 @@
+.confirm_title {
+  color: #ffffff;
+  margin-top: 2vw;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 10vw;
+}
