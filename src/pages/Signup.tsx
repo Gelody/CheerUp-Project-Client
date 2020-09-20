@@ -22,7 +22,7 @@ function Signup() {
   const NameInfo = { userName: userName };
 
   // 아이디 중복 확인 서버 요청
-  const idCehck = (e: React.FormEvent<HTMLFormElement>): void => {
+  const idCheck = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     console.log(userName);
     axios
@@ -92,7 +92,14 @@ function Signup() {
             value={email}
             onChange={onChangeEamil}
           />
-
+          <input
+            className="signup_form"
+            required
+            type="username"
+            placeholder="닉네임"
+            value={userName}
+            onChange={onChangeUserName}
+          />
           <input
             className="signup_form"
             required
