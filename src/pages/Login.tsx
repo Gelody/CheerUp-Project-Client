@@ -79,7 +79,7 @@ function Login() {
         <br />
         <p className="text">계정이 없으신가요?</p>
         <Link to="/signup" className="signup_link">
-          회원가입
+          <p className="login_cta">회원가입</p>
         </Link>
       </form>
     </>
