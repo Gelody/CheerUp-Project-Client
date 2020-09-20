@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Signup.css";
 import axios from "axios";
+import Background from "./background";
 
 function Signup() {
   // input을 담을 상태들과 상태변경 함수 선언하기
@@ -13,7 +14,7 @@ function Signup() {
   const signUpInfo = {
     userId: email,
     userPassword: password,
-    userName: userName,
+    userName: userName
   };
 
   // 서버 요청 및 비밀번호 검증로직
@@ -24,13 +25,13 @@ function Signup() {
       : console.log({ signUpInfo });
     axios
       .post("/user/join", signUpInfo)
-      .then((res) => {
+      .then(res => {
         if (res.status === 200) {
           alert("가입하신 이메일로 발송된 인증메일을 확인해주세요.");
           window.open(`https://www.${email.split("@")[1]}`);
         }
       })
-      .catch((err) => {
+      .catch(err => {
         if (err.response.status === 403) {
           console.log(err.response.data);
           alert("가입된 이메일입니다.");
@@ -56,51 +57,55 @@ function Signup() {
 
   return (
     <>
-      <form onSubmit={onSubmit}>
-        <input
-          className="signup_form"
-          required
-          type="email"
-          placeholder="아이디 (이메일 주소)"
-          value={email}
-          onChange={onChangeEamil}
-        />
+      <Background />
+      <div className="signup_form_wrap">
+        <h1 className="signup_title">회원가입</h1>
+        <form onSubmit={onSubmit}>
+          <input
+            className="signup_form"
+            required
+            type="email"
+            placeholder="아이디 (이메일 주소)"
+            value={email}
+            onChange={onChangeEamil}
+          />
 
-        <input
-          className="signup_form"
-          required
-          type="username"
-          placeholder="이름"
-          value={userName}
-          onChange={onChangeUserName}
-        />
+          <input
+            className="signup_form"
+            required
+            type="username"
+            placeholder="닉네임"
+            value={userName}
+            onChange={onChangeUserName}
+          />
 
-        <input
-          className="signup_form"
-          required
-          type="password"
-          placeholder="비밀번호"
-          value={password}
-          onChange={onChangePassword}
-        />
+          <input
+            className="signup_form"
+            required
+            type="password"
+            placeholder="비밀번호"
+            value={password}
+            onChange={onChangePassword}
+          />
 
-        <input
-          className="signup_form"
-          required
-          type="password"
-          placeholder="비밀번호 확인"
-          value={passwordCheck}
-          onChange={onChangePasswordCheck}
-        />
-        {passwordErr ? (
-          <p className="password-feedback">비밀번호가 일치하지 않습니다.</p>
-        ) : (
-          <p></p>
-        )}
-        <button className="signup_button" type="submit">
-          가입하기
-        </button>
-      </form>
+          <input
+            className="signup_form"
+            required
+            type="password"
+            placeholder="비밀번호 확인"
+            value={passwordCheck}
+            onChange={onChangePasswordCheck}
+          />
+          {passwordErr ? (
+            <p className="password-feedback">비밀번호가 일치하지 않습니다.</p>
+          ) : (
+            <p></p>
+          )}
+          <button className="signup_button" type="submit">
+            가입하기
+          </button>
+        </form>
+      </div>
     </>
   );
 }

@@ -2,6 +2,8 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import Background from "./background";
+import "./ConfirmEmail.css";
 // 이메일에서 링크를 클릭하면 파라미터에 토큰을 달고 해당 컴포넌트로 이동
 // useParams로 구한 쿼리를 /mail/confirmmail 로 post
 // res 200과 400으로 온다.
@@ -14,15 +16,15 @@ function ConfirmEmail() {
   useEffect(() => {
     axios
       .post("/mail/confirmmail", {
-        url: url,
+        url: url
       })
-      .then((res) => {
+      .then(res => {
         if (res.status === 200) {
           alert("이메일 인증이 완료되었습니다.");
           history.push("/login");
         }
       })
-      .catch((err) => {
+      .catch(err => {
         if (err.response) {
           // 요청이 이루어졌으며 서버가 2xx의 범위를 벗어나는 상태 코드로 응답했습니다.
           console.log("err:", err);
@@ -52,9 +54,10 @@ function ConfirmEmail() {
   // }, []);
 
   return (
-    <div>
-      이메일 인증이 완료되었습니다. <p />
-    </div>
+    <>
+      <Background />
+      <div className="confirm_title">이메일 인증이 완료되었습니다.</div>
+    </>
   );
 }
 

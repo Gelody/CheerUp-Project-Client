@@ -1,9 +1,18 @@
+.signup_form_wrap {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+}
+.signup_title {
+  color: #ffffff;
+  margin-top: 2vw;
+}
 .signup_form {
   border: 1px solid #999;
-  padding: 20px;
-  font-size: 2vw;
-  width: 40%;
-  height: 30px;
+  font-size: 20px;
+  width: 30vh;
+  height: 4vh;
   display: block;
   margin: 30px auto;
 }
