@@ -14,7 +14,7 @@ function Intro() {
           <div className="intro_subtitle">당신을 응원합니다</div>
           <div className="intro_copy">응원 품앗이 SNS</div>
           <Link to="/login" className="link_button">
-            들어가기
+            <p className="intro_cta">시작하기</p>
           </Link>
         </div>
       </div>

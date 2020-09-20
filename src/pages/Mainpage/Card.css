@@ -2,7 +2,7 @@
   width: 80%;
   height: 100%;
   margin: auto;
-  margin-top: 3%;
+  margin-top: 10%;
 }
 
 .maincard_box {
@@ -18,6 +18,7 @@
   width: 100%;
   height: 500px;
   text-align: center;
+  background-image: url("../../images/people.jpg");
 }
 
 .maincards_text {
