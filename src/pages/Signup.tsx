@@ -17,7 +17,7 @@ function Signup() {
   const signUpInfo = {
     userId: email,
     userPassword: password,
-    userName: userName
+    userName: userName,
   };
   const NameInfo = { userName: userName };
 
@@ -27,7 +27,7 @@ function Signup() {
     console.log(userName);
     axios
       .post("/user/checkName", NameInfo)
-      .then(res => {
+      .then((res) => {
         if (res.status === 200) {
           setUsableName(true);
           setClickVerifyButton(true);
@@ -36,7 +36,7 @@ function Signup() {
           setClickVerifyButton(false);
         }
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
 
   // 서버 요청 및 비밀번호 검증로직
@@ -47,13 +47,13 @@ function Signup() {
       : console.log({ signUpInfo });
     axios
       .post("/user/join", signUpInfo)
-      .then(res => {
+      .then((res) => {
         if (res.status === 200) {
           alert("가입하신 이메일로 발송된 인증메일을 확인해주세요.");
           window.open(`https://www.${email.split("@")[1]}`);
         }
       })
-      .catch(err => {
+      .catch((err) => {
         if (err.response.status === 403) {
           console.log(err.response.data);
           alert("가입된 이메일입니다.");
@@ -82,6 +82,28 @@ function Signup() {
       <Background />
       <div className="signup_form_wrap">
         <h1 className="signup_title">회원가입</h1>
+
+        <form onSubmit={idCheck}>
+          <input
+            className="username_from"
+            required
+            type="username"
+            placeholder="닉네임"
+            value={userName}
+            onChange={onChangeUserName}
+          />
+          {clickVerifyButton ? (
+            usableName ? (
+              <p className="usable_user">사용가능한 닉네임입니다.</p>
+            ) : null
+          ) : unusableName ? (
+            <p className="unusable_user">이미 사용중인 닉네임입니다.</p>
+          ) : null}
+
+          <button className="username_check_button" type="submit">
+            중복확인
+          </button>
+        </form>
 
         <form onSubmit={onSubmit}>
           <input
