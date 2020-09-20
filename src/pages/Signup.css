@@ -30,3 +30,33 @@
   color: red;
   text-align: center;
 }
+
+.usable_user {
+  color: rgb(54, 104, 25);
+  text-align: center;
+}
+
+.unusable_user {
+  color: red;
+  text-align: center;
+}
+
+.username_check_button {
+  background-color: #ffffff;
+  font-size: 1vh;
+  padding: 1px 20px;
+  margin: 10px auto;
+  cursor: pointer;
+  display: flex;
+}
+
+.username_form {
+  border: 1px solid #999;
+  padding: 20px;
+  font-size: 2vw;
+  width: 40%;
+  height: 30px;
+  display: flex;
+  margin: auto;
+  margin-top: 30px;
+}

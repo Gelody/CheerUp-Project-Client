@@ -24,17 +24,14 @@ function Main() {
           console.log("카드 데이터가 없습니다");
         }
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };
 
   const isScrolling = () => {
-    // console.log("innerHeight:", window.innerHeight);
-    // console.log("scrollTop:", document.documentElement.scrollTop);
-    // console.log("offsetHeight:", document.documentElement.offsetHeight);
     if (
-      window.innerHeight + document.documentElement.scrollTop !==
+      window.innerHeight + Math.floor(document.documentElement.scrollTop) !==
       document.documentElement.offsetHeight
     ) {
       // 제일 하단이 아닐 때는 그냥 리턴

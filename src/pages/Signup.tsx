@@ -8,6 +8,9 @@ function Signup() {
   // Hooks 사용하기
   const [email, setEmail] = useState("");
   const [userName, setUserName] = useState("");
+  const [usableName, setUsableName] = useState(false);
+  const [unusableName, setUnusableName] = useState(false);
+  const [clickVerifyButton, setClickVerifyButton] = useState(false);
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
   const [passwordErr, setPasswordErr] = useState(false);
@@ -15,6 +18,25 @@ function Signup() {
     userId: email,
     userPassword: password,
     userName: userName
+  };
+  const NameInfo = { userName: userName };
+
+  // 아이디 중복 확인 서버 요청
+  const idCehck = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    console.log(userName);
+    axios
+      .post("/user/checkName", NameInfo)
+      .then(res => {
+        if (res.status === 200) {
+          setUsableName(true);
+          setClickVerifyButton(true);
+        } else if (res.status === 203) {
+          setUnusableName(true);
+          setClickVerifyButton(false);
+        }
+      })
+      .catch(err => console.log(err));
   };
 
   // 서버 요청 및 비밀번호 검증로직
@@ -60,23 +82,15 @@ function Signup() {
       <Background />
       <div className="signup_form_wrap">
         <h1 className="signup_title">회원가입</h1>
+
         <form onSubmit={onSubmit}>
           <input
             className="signup_form"
             required
             type="email"
-            placeholder="아이디 (이메일 주소)"
+            placeholder="이메일주소"
             value={email}
             onChange={onChangeEamil}
-          />
-
-          <input
-            className="signup_form"
-            required
-            type="username"
-            placeholder="닉네임"
-            value={userName}
-            onChange={onChangeUserName}
           />
 
           <input
