@@ -24,7 +24,7 @@
   cursor: pointer;
   font-family: "CookieRunOTF-Bold";
 }
-.review_update_button:hover{
+.review_update_button:hover {
   box-shadow: none;
 }
 .review_container {
@@ -40,9 +40,9 @@
 
 .close_button {
   border: 0px;
-  position : absolute;
-  right : 5px;
-  top : 5px
+  position: absolute;
+  left: 5px;
+  top: 5px;
 }
 
 @font-face {
