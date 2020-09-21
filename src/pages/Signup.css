@@ -32,30 +32,31 @@
 }
 
 .usable_user {
-  color: rgb(54, 104, 25);
+  color: rgb(255, 255, 255);
   text-align: center;
+  font-weight: bold;
 }
 
 .unusable_user {
   color: red;
   text-align: center;
+  font-weight: bold;
 }
 
 .username_check_button {
   background-color: #ffffff;
-  font-size: 1vh;
-  padding: 1px 20px;
-  margin: 10px auto;
-  cursor: pointer;
+  font-size: 20px;
+  padding: 5px 50px;
+  margin: auto;
   display: flex;
+  cursor: pointer;
 }
 
 .username_form {
   border: 1px solid #999;
-  padding: 20px;
-  font-size: 2vw;
-  width: 40%;
-  height: 30px;
+  font-size: 20px;
+  width: 30vh;
+  height: 4vh;
   display: flex;
   margin: auto;
   margin-top: 30px;
