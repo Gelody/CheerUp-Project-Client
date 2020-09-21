@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Card.css";
 import Comment from "./MainpageComment";
 
@@ -7,17 +7,23 @@ function Card({ cards }: any) {
   if (cards.length === 0) {
     return <div>Loading...</div>;
   }
-
+  console.log("카드는 뭣을?", { cards });
   return (
     <>
       <div className="maincard_wrapper">
         {cards.map((card: any, id: any) => (
           <div key={id} className="maincard_box">
             <div className="maincard">
+              <img
+                src={require(`../../images/${Math.floor(
+                  Math.random() * 10
+                )}.jpg`)}
+                className="card_img"
+              ></img>
+              {/* <PutImg /> */}
               <div className="maincards_date">
-                {card.D_day}까지 응원 해주세요
+                {card.D_day} 까지 응원해주세요!
               </div>
-
               <div className="maincards_text">{card.text}</div>
             </div>
 
