@@ -86,7 +86,7 @@ function Signup() {
 
         <form onSubmit={idCheck}>
           <input
-            className="username_from"
+            className="username_form"
             required
             type="username"
             placeholder="닉네임"
@@ -100,7 +100,7 @@ function Signup() {
           ) : unusableName ? (
             <p className="unusable_user">이미 사용중인 닉네임입니다.</p>
           ) : null}
-
+          <br />
           <button className="username_check_button" type="submit">
             중복확인
           </button>
@@ -115,14 +115,7 @@ function Signup() {
             value={email}
             onChange={onChangeEamil}
           />
-          <input
-            className="signup_form"
-            required
-            type="username"
-            placeholder="닉네임"
-            value={userName}
-            onChange={onChangeUserName}
-          />
+
           <input
             className="signup_form"
             required
