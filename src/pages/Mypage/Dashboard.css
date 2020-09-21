@@ -45,7 +45,6 @@
 .logoutBtn:hover {
   background: #fff;
   color: black;
-
 }
 .logoutBtn:before,
 button:after {
@@ -68,4 +67,7 @@ button:after {
 button:hover:after {
   width: 100%;
   transition: 800ms ease all;
+}
+.dashNum {
+  font-size: 3vh;
 }

@@ -15,8 +15,8 @@ function CardModalPage() {
   const mycard = {
     headers: { authorization: user },
     params: {
-      id: cardId,
-    },
+      id: cardId
+    }
   };
 
   // 로그인한 유저의 id 요청
@@ -87,7 +87,7 @@ function CardModalPage() {
       setisReview(true);
     }
   };
-
+  console.log("리뷰점리뷰:", review.review);
   return (
     <>
       <CardModal
