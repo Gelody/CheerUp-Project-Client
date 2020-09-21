@@ -67,10 +67,6 @@ function Dashboard({ cheeringCount, cheeredCount }: any) {
 
         <span>LV.{level(count)}</span>
 
-        <h1>My Page</h1>
-        <span>{userInfo.userName}님의 응원레벨</span>
-        <span>LV.{level(count)}</span>
-
         <br />
         <ul>
           {userInfo.userName}님이 작성한 모든 카드에는
@@ -85,7 +81,6 @@ function Dashboard({ cheeringCount, cheeredCount }: any) {
             했습니다.
           </span>
         </ul>
-
       </div>
     </>
   );
