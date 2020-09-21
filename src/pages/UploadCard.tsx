@@ -13,7 +13,7 @@ function UploadCard() {
   const cardData = {
     text: text,
     user_Id: user,
-    D_day: date,
+    D_day: date
   };
 
   // 카드 등록 요청
@@ -21,7 +21,7 @@ function UploadCard() {
     e.preventDefault();
     axios
       .post("/card/create", cardData, { headers: { authorization: user } })
-      .then((res) => {
+      .then(res => {
         if (res.status === 200) {
           swal("카드가 등록되었습니다.", "", "success");
           history.push("/main");

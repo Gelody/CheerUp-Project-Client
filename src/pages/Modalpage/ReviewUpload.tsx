@@ -65,7 +65,7 @@ function ReviewUpload({ isOpen, open, close }: any) {
                       className="review_update_form"
                       value={text}
                       onChange={onChangeText}
-                      maxLength={300}
+                      maxLength={70}
                       placeholder="후기를 등록 해 주세요"
                     ></textarea>
                     <button className="review_update_button" type="submit">
