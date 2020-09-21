@@ -68,3 +68,6 @@ button:hover:after {
   width: 100%;
   transition: 800ms ease all;
 }
+.dashNum {
+  font-size: 3vh;
+}

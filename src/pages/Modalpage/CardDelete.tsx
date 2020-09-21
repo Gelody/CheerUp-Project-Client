@@ -1,7 +1,9 @@
 import React from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import swal from "sweetalert";
+import * as _swal from "sweetalert";
+import { SweetAlert } from "sweetalert/typings/core";
+const swal: SweetAlert = _swal as any;
 
 function MycardDelete({ cardId }: any) {
   const history = useHistory();
@@ -11,17 +13,28 @@ function MycardDelete({ cardId }: any) {
   // 카드 삭제 요청
   const onSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    axios
-      .post("/card/delete", cardData, { headers: { authorization: user } })
-      .then((data) => {
-        if (data) {
-          swal("카드가 삭제되었습니다.", "", "success");
-          history.push("/mypage");
-        } else {
-          swal("카드 삭제에 문제가 있습니다.", "", "warning");
-        }
-      });
-    // .catch((err) => console.log(err));
+    swal({
+      title: "정말 삭제하시겠어요?",
+      text: "한번 삭제된 파일은 다시 되돌릴 수 없습니다!",
+      icon: "warning",
+      buttons: [true, true],
+      dangerMode: true
+    }).then(willDelete => {
+      if (willDelete) {
+        axios
+          .post("/card/delete", cardData, {
+            headers: { authorization: user }
+          })
+          .then(data => {
+            if (data) {
+              swal("카드가 삭제되었습니다.", { icon: "success" });
+              history.push("/mypage");
+            } else {
+              swal("휴! 살았다.", "", "warning");
+            }
+          });
+      }
+    });
   };
   return (
     <>
