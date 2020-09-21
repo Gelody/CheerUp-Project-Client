@@ -20,7 +20,7 @@ function CardModal({
   review,
   isReview,
   reviewCheck,
-  myId,
+  myId
 }: any) {
   const modalComments = modalCard[0]?.Comment;
   const history = useHistory();
@@ -97,27 +97,29 @@ function CardModal({
                       </span>
                     </div>
                   ) : null}
+                  {modalComments?.length > 0 ? (
+                    <div className="modal_comment_box">
+                      {modalComments?.map((comment: any, index: any) => (
+                        <div key={index}>
+                          <span className="modal_comments_username">
+                            {comment.User.userName}
+                          </span>
 
-                  <div className="modal_comment_box">
-                    {modalComments?.map((comment: any, index: any) => (
-                      <div key={index}>
-                        <span className="modal_comments_username">
-                          {comment.User.userName}
-                        </span>
+                          <span className="modal_comments">{comment.text}</span>
+                          <span>
+                            {ismyCard ? (
+                              <CommentDelete
+                                cardId={modalCard[0]?.id}
+                                comments={modalCard[0]?.Comment}
+                                commentId={comment.id}
+                              ></CommentDelete>
+                            ) : null}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
 
-                        <span className="modal_comments">{comment.text}</span>
-                        <span>
-                          {ismyCard ? (
-                            <CommentDelete
-                              cardId={modalCard[0]?.id}
-                              comments={modalCard[0]?.Comment}
-                              commentId={comment.id}
-                            ></CommentDelete>
-                          ) : null}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
                   <CommentUpload cardId={modalCard[0]?.id}></CommentUpload>
                 </div>
               </div>
