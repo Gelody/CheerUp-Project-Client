@@ -20,7 +20,9 @@
   font-family: "CookieRunOTF-Bold";
   font-size: 20px;
 }
-
+.context {
+  font-family: 'Open Sans', sans-serif; ;
+}
 .Total_Count {
   font-weight: bold;
   font-family: sans-serif;
@@ -29,7 +31,7 @@
 }
 
 .logoutBtn {
-  background: #1aab8a;
+  background: black;
   color: #fff;
   border: none;
   position: relative;
@@ -43,7 +45,7 @@
 }
 .logoutBtn:hover {
   background: #fff;
-  color: #1aab8a;
+  color: black;
 }
 .logoutBtn:before,
 button:after {
@@ -53,7 +55,7 @@ button:after {
   right: 0;
   height: 2px;
   width: 0;
-  background: #1aab8a;
+  background: black;
   transition: 400ms ease all;
 }
 .logoutBtn:after {
