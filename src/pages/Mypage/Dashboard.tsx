@@ -39,16 +39,15 @@ function Dashboard({ cheeringCount, cheeredCount }: any) {
       .get("/user/getid", { headers: { authorization: user } })
       .then(({ data }) => {
         setUserInfo(data);
-        if (data) {
-          console.log("유저 아이디를 성공적으로 받았습니다", data);
-        } else {
-          console.log("유저의 아이디 데이터가 없습니다");
-        }
+        // if (data) {
+        //   console.log("유저 아이디를 성공적으로 받았습니다", data);
+        // } else {
+        //   console.log("유저의 아이디 데이터가 없습니다");
+        // }
       });
     // .catch((err) => console.log(err));
   }, []);
 
-  console.log("유저네임", userInfo.userName);
   return (
     <>
       <div className="dashborad_wrap">
@@ -64,9 +63,7 @@ function Dashboard({ cheeringCount, cheeredCount }: any) {
         </button>
         <h1>My Page</h1>
         <span>{userInfo.userName}의 응원레벨</span>
-
         <span>LV.{level(count)}</span>
-
         <br />
         <ul>
           {userInfo.userName}님이 작성한 모든 카드에는

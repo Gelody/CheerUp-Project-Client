@@ -30,7 +30,6 @@
 
 .logoutBtn {
   background: black;
-
   color: #fff;
   border: none;
   position: relative;
@@ -45,8 +44,8 @@
 .logoutBtn:hover {
   background: #fff;
   color: black;
-
 }
+
 .logoutBtn:before,
 button:after {
   content: "";
