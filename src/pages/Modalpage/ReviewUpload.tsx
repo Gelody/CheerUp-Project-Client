@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import Mypage from "../Mypage/Mypage";
 import "./ReviewUpload.css";
 import axios from "axios";
+import swal from "sweetalert";
 
 function ReviewUpload({ isOpen, open, close }: any) {
   const [text, setText] = useState("");
@@ -24,13 +25,13 @@ function ReviewUpload({ isOpen, open, close }: any) {
       })
       .then((res) => {
         if (res.status === 200) {
-          alert("후기가 등록 되었습니다.");
+          swal("후기가 등록 되었습니다.", "", "success");
           history.push("/mypage");
         } else {
-          alert("후기 등록에 문제가 있습니다.");
+          swal("후기 등록에 문제가 있습니다.", "", "warning");
         }
-      })
-      .catch((err) => console.log(err));
+      });
+    // .catch((err) => console.log(err));
   };
 
   const onChangeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {

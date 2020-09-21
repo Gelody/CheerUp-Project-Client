@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import swal from "sweetalert";
 
 function CommentDelete({ cardId, commentId }: any) {
   const commentData = { card_id: cardId, comment_id: commentId };
@@ -14,13 +15,13 @@ function CommentDelete({ cardId, commentId }: any) {
       })
       .then((res) => {
         if (res.status === 200) {
-          alert("댓글이 삭제되었습니다.");
+          swal("댓글이 삭제되었습니다.", "", "success");
           window.location.replace(cardId);
         } else {
-          alert("댓글 삭제에 문제가 있습니다.");
+          swal("댓글 삭제에 문제가 있습니다.", "", "warning");
         }
-      })
-      .catch((err) => console.log(err));
+      });
+    // .catch((err) => console.log(err));
   };
 
   return (

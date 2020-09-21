@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import swal from "sweetalert";
 
 function MycardDelete({ cardId }: any) {
   const history = useHistory();
@@ -14,13 +15,13 @@ function MycardDelete({ cardId }: any) {
       .post("/card/delete", cardData, { headers: { authorization: user } })
       .then((data) => {
         if (data) {
-          alert("카드가 삭제되었습니다.");
+          swal("카드가 삭제되었습니다.", "", "success");
           history.push("/mypage");
         } else {
-          alert("카드 삭제에 문제가 있습니다.");
+          swal("카드 삭제에 문제가 있습니다.", "", "warning");
         }
-      })
-      .catch((err) => console.log(err));
+      });
+    // .catch((err) => console.log(err));
   };
   return (
     <>

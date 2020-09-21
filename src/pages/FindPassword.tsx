@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Background from "./background";
 import "./FindPassword.css";
+import swal from "sweetalert";
 
 function FindPassword() {
   const [email, setEmail] = useState("");
@@ -9,17 +10,15 @@ function FindPassword() {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    axios
-      .post("/mail/sendreset", resetPwd)
-      .then(res => {
-        if (res.status === 200) {
-          alert("이메일에서 인증메일을 확인해주세요.");
-          window.open(`https://www.${email.split("@")[1]}`);
-        }
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    axios.post("/mail/sendreset", resetPwd).then((res) => {
+      if (res.status === 200) {
+        swal("이메일에서 인증메일을 확인해주세요.", "", "info");
+        window.open(`https://www.${email.split("@")[1]}`);
+      }
+    });
+    // .catch((err) => {
+    //   console.log(err);
+    // });
   };
   const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import "./MainpageComment.css";
+import swal from "sweetalert";
 
 // 메인페이지의 댓글란(댓글 업로드 & 모든 댓글 요청)
 function Comment({ cardId }: any) {
@@ -28,13 +29,13 @@ function Comment({ cardId }: any) {
       })
       .then((res) => {
         if (res.status === 200) {
-          alert("댓글이 등록되었습니다.");
+          swal("댓글이 등록되었습니다.", "", "success");
           history.push(`/cardmodalpages/${card.cardId}`);
         } else {
-          alert("댓글 등록에 문제가 있습니다.");
+          swal("댓글 등록에 문제가 있습니다.", "", "warning");
         }
-      })
-      .catch((err) => console.log(err));
+      });
+    // .catch((err) => console.log(err));
   };
 
   const onChangeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -44,17 +45,15 @@ function Comment({ cardId }: any) {
 
   // 댓글 받아오는 요청
   useEffect(() => {
-    axios
-      .get("/comment/get", comment_get_Data)
-      .then(({ data }) => {
-        setComments(data);
-        // if (data) {
-        //   console.log("모든 댓글을 성공적으로 가져왔습니다");
-        // } else {
-        //   console.log("댓글 데이터가 없습니다");
-        // }
-      })
-      .catch((err: any) => console.log(err));
+    axios.get("/comment/get", comment_get_Data).then(({ data }) => {
+      setComments(data);
+      // if (data) {
+      //   console.log("모든 댓글을 성공적으로 가져왔습니다");
+      // } else {
+      //   console.log("댓글 데이터가 없습니다");
+      // }
+    });
+    // .catch((err: any) => console.log(err));
   }, []);
 
   return (

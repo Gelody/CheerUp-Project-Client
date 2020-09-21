@@ -17,12 +17,12 @@ function Main() {
         setCards([...cards, ...data]);
         setPage(page + 1);
         setIsFetching(false);
-        if (data) {
-          console.log("모든 카드를 성공적으로 가져왔습니다", data);
-          console.log(page);
-        } else {
-          console.log("카드 데이터가 없습니다");
-        }
+        // if (data) {
+        //   console.log("모든 카드를 성공적으로 가져왔습니다", data);
+        //   console.log(page);
+        // } else {
+        //   console.log("카드 데이터가 없습니다");
+        // }
       })
       .catch((err) => {
         console.log(err);
