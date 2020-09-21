@@ -73,7 +73,7 @@ function CardModalPage() {
   };
 
   const verifyUser = () => {
-    if (myId === modalCard[0]?.user_Id) {
+    if (myId.id === modalCard[0]?.user_Id) {
       setisMyCard(true);
     } else {
       setisMyCard(false);
@@ -100,6 +100,7 @@ function CardModalPage() {
         reviewCheck={reviewCheck}
         review={review}
         isReview={isReview}
+        myId={myId}
       ></CardModal>
     </>
   );

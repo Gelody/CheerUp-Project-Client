@@ -33,6 +33,22 @@ function Dashboard({ cheeringCount, cheeredCount }: any) {
     // .catch((err) => console.log(err));
   }, []);
 
+  // 로그인한 유저의 id 요청
+  useEffect(() => {
+    axios
+      .get("/user/getid", { headers: { authorization: user } })
+      .then(({ data }) => {
+        setUserInfo(data);
+        if (data) {
+          console.log("유저 아이디를 성공적으로 받았습니다", data);
+        } else {
+          console.log("유저의 아이디 데이터가 없습니다");
+        }
+      });
+    // .catch((err) => console.log(err));
+  }, []);
+
+  console.log("유저네임", userInfo.userName);
   return (
     <>
       <div className="dashborad_wrap">
@@ -46,6 +62,10 @@ function Dashboard({ cheeringCount, cheeredCount }: any) {
         >
           로그아웃
         </button>
+        <h1>My Page</h1>
+        <span>{userInfo.userName}의 응원레벨</span>
+        <span>LV.{level(count)}</span>
+
         <h1>My Page</h1>
         <span>{userInfo.userName}님의 응원레벨</span>
         <span>LV.{level(count)}</span>

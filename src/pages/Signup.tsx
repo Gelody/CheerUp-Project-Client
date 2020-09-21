@@ -18,7 +18,7 @@ function Signup() {
   const signUpInfo = {
     userId: email,
     userPassword: password,
-    userName: userName,
+    userName: userName
   };
   const NameInfo = { userName: userName };
 
@@ -28,7 +28,7 @@ function Signup() {
     console.log(userName);
     axios
       .post("/user/checkName", NameInfo)
-      .then((res) => {
+      .then(res => {
         if (res.status === 200) {
           setUsableName(true);
           setClickVerifyButton(true);
@@ -37,7 +37,7 @@ function Signup() {
           setClickVerifyButton(false);
         }
       })
-      .catch((err) => console.log(err));
+      .catch(err => console.log(err));
   };
 
   // 서버 요청 및 비밀번호 검증로직
@@ -48,13 +48,13 @@ function Signup() {
       : console.log({ signUpInfo });
     axios
       .post("/user/join", signUpInfo)
-      .then((res) => {
+      .then(res => {
         if (res.status === 200) {
           swal("가입하신 이메일로 발송된 인증메일을 확인해주세요.", "", "info");
           window.open(`https://www.${email.split("@")[1]}`);
         }
       })
-      .catch((err) => {
+      .catch(err => {
         if (err.response.status === 403) {
           console.log(err.response.data);
           swal("가입된 이메일입니다.", "", "warning");
@@ -115,7 +115,14 @@ function Signup() {
             value={email}
             onChange={onChangeEamil}
           />
-
+          <input
+            className="signup_form"
+            required
+            type="username"
+            placeholder="닉네임"
+            value={userName}
+            onChange={onChangeUserName}
+          />
           <input
             className="signup_form"
             required
