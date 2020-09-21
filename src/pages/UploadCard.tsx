@@ -3,6 +3,8 @@ import "./UploadCard.css";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import swal from "sweetalert";
+import { faPen } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 // 카드 업로드 기능
 function UploadCard() {
@@ -44,14 +46,17 @@ function UploadCard() {
   return (
     <>
       <div className="container">
-        <form onSubmit={onSubmit}>
-          <textarea
-            className="upload_form"
-            value={text}
-            onChange={onChangeText}
-            maxLength={300}
-            placeholder="Step1. 어떤 일에 응원이 필요하신가요?"
-          ></textarea>
+          <form onSubmit={onSubmit}>
+            <textarea
+              className="upload_form"
+              value={text}
+              onChange={onChangeText}
+              maxLength={300}
+              placeholder="Step1. 어떤 일에 응원이 필요하신가요? 여기에 적어주세요"
+              
+             >
+
+            </textarea>
 
           <p className="calendar_title">
             Step.2 언제까지 응원이 필요하신지 선택 해 주세요
@@ -63,10 +68,10 @@ function UploadCard() {
             type="date"
             onChange={onChangeDate}
           ></input>
-
           <button className="upload_button" type="submit">
-            카드 등록하기
+           카드등록
           </button>
+   
         </form>
       </div>
     </>
