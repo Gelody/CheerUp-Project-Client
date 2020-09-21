@@ -47,7 +47,7 @@ function ReviewUpload({ isOpen, open, close }: any) {
           <Mypage></Mypage>
           <div className="ModalOverlay">
             <div className="modal_Wrapper">
-              <div className="modal_Inner ">
+              <div className="modal_Inner">
                 <p> Cheer-Up! </p>
                 <button
                   className="close_button"
@@ -66,7 +66,7 @@ function ReviewUpload({ isOpen, open, close }: any) {
                       value={text}
                       onChange={onChangeText}
                       maxLength={70}
-                      placeholder="후기를 등록 해 주세요"
+                      placeholder="후기를 등록해 주세요"
                     ></textarea>
                     <button className="review_update_button" type="submit">
                       후기 등록
