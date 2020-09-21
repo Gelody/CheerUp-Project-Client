@@ -20,6 +20,7 @@ function CardModal({
   review,
   isReview,
   reviewCheck,
+  myId,
 }: any) {
   const modalComments = modalCard[0]?.Comment;
   const history = useHistory();
@@ -62,7 +63,7 @@ function CardModal({
                         onClick={() => setUpdateClick(true)}
                         className="nav_update_button"
                       >
-                        카드수정하기
+                        카드수정
                       </button>
                     ) : null}
                     {ismyCard ? (
@@ -83,16 +84,16 @@ function CardModal({
                     </div>
 
                     <br />
+                    <br />
 
-                    <span className="modal_card_text">
-                      {modalCard[0]?.text}
-                    </span>
+                    <div className="modal_card_text">{modalCard[0]?.text}</div>
                   </div>
 
                   {isReview ? (
                     <div className="modal_review_box">
                       <span className="review_text">
-                        카드작성자의 후기 :{review.review}
+                        카드작성자 {myId.userName}님의 후기
+                        <br />:{review.review}
                       </span>
                     </div>
                   ) : null}
@@ -105,14 +106,15 @@ function CardModal({
                         </span>
 
                         <span className="modal_comments">{comment.text}</span>
-
-                        {ismyCard ? (
-                          <CommentDelete
-                            cardId={modalCard[0]?.id}
-                            comments={modalCard[0]?.Comment}
-                            commentId={comment.id}
-                          ></CommentDelete>
-                        ) : null}
+                        <span>
+                          {ismyCard ? (
+                            <CommentDelete
+                              cardId={modalCard[0]?.id}
+                              comments={modalCard[0]?.Comment}
+                              commentId={comment.id}
+                            ></CommentDelete>
+                          ) : null}
+                        </span>
                       </div>
                     ))}
                   </div>

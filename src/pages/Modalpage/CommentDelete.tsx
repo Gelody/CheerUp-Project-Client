@@ -28,7 +28,7 @@ function CommentDelete({ cardId, commentId }: any) {
     <>
       <form onSubmit={onSubmit}>
         <button className="comment_delete_button" type="submit">
-          댓글삭제하기
+          댓글삭제
         </button>
       </form>
     </>

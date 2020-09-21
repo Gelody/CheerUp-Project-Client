@@ -27,7 +27,7 @@ function MycardDelete({ cardId }: any) {
     <>
       <form onSubmit={onSubmit}>
         <button className="card_delete_button" type="submit">
-          카드삭제하기
+          카드삭제
         </button>
       </form>
     </>
