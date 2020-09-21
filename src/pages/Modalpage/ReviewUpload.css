@@ -10,15 +10,23 @@
   font-family: sans-serif;
   color: rgb(0, 0, 0);
 }
-
+.modal_Inner p {
+  text-align: center;
+}
 .review_update_button {
-  background-color: #ffffff;
+  background-color: white;
+  color: black;
+  border: none;
+  box-shadow: none;
   font-size: 1.5vw;
   margin: auto;
   display: flex;
   cursor: pointer;
+  font-family: "CookieRunOTF-Bold";
 }
-
+.review_update_button:hover{
+  box-shadow: none;
+}
 .review_container {
   border: solid;
   width: 70%;
@@ -28,4 +36,19 @@
   margin-bottom: 10%;
   padding-top: 1%;
   padding-bottom: 1%;
+}
+
+.close_button {
+  border: 0px;
+  position : absolute;
+  right : 5px;
+  top : 5px
+}
+
+@font-face {
+  font-family: "CookieRunOTF-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Bold00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }

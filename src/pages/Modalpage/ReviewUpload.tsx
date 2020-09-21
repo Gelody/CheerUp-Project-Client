@@ -5,6 +5,8 @@ import Mypage from "../Mypage/Mypage";
 import "./ReviewUpload.css";
 import axios from "axios";
 import swal from "sweetalert";
+import { faTimes } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 function ReviewUpload({ isOpen, open, close }: any) {
   const [text, setText] = useState("");
@@ -46,6 +48,7 @@ function ReviewUpload({ isOpen, open, close }: any) {
           <div className="ModalOverlay">
             <div className="modal_Wrapper">
               <div className="modal_Inner ">
+                <p> Cheer-Up! </p>
                 <button
                   className="close_button"
                   onClick={() => {
@@ -53,7 +56,7 @@ function ReviewUpload({ isOpen, open, close }: any) {
                     history.push("/mypage");
                   }}
                 >
-                  close
+                  <FontAwesomeIcon icon={faTimes} size="1x"></FontAwesomeIcon>
                 </button>
 
                 <div className="review_container">
@@ -66,7 +69,7 @@ function ReviewUpload({ isOpen, open, close }: any) {
                       placeholder="후기를 등록 해 주세요"
                     ></textarea>
                     <button className="review_update_button" type="submit">
-                      후기 등록하기
+                      후기 등록
                     </button>
                   </form>
                 </div>
