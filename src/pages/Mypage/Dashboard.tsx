@@ -64,24 +64,28 @@ function Dashboard({ cheeringCount, cheeredCount }: any) {
         </button>
         <h1>My Page</h1>
         <span>{userInfo.userName}의 응원레벨</span>
-       
-          <span>LV.{level(count)}</span>
-         
-            <br />
-            <ul>
-              {userInfo.userName}님이 작성한 모든 카드에는
-              <span className="Total_Count">
-                <br></br> {cheeredCount} 명이 응원을 해주셨습니다.
-              </span>
-            </ul>
-            <ul>
-              {userInfo.userName}님은
-              <span className="Total_Count">
-                <br></br>지금까지 총 {cheeringCount[0]?.Commentcount} 명을 응원
-                했습니다.
-              </span>
-            </ul>
-           
+
+        <span>LV.{level(count)}</span>
+
+        <h1>My Page</h1>
+        <span>{userInfo.userName}님의 응원레벨</span>
+        <span>LV.{level(count)}</span>
+
+        <br />
+        <ul>
+          {userInfo.userName}님이 작성한 모든 카드에는
+          <span className="Total_Count">
+            <br></br> {cheeredCount} 명이 응원을 해주셨습니다.
+          </span>
+        </ul>
+        <ul>
+          {userInfo.userName}님은
+          <span className="Total_Count">
+            <br></br>지금까지 총 {cheeringCount[0]?.Commentcount} 명을 응원
+            했습니다.
+          </span>
+        </ul>
+
       </div>
     </>
   );

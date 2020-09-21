@@ -20,9 +20,7 @@
   font-family: "CookieRunOTF-Bold";
   font-size: 20px;
 }
-.context {
-  font-family: 'Open Sans', sans-serif; ;
-}
+
 .Total_Count {
   font-weight: bold;
   font-family: sans-serif;
@@ -32,6 +30,7 @@
 
 .logoutBtn {
   background: black;
+
   color: #fff;
   border: none;
   position: relative;
@@ -46,6 +45,7 @@
 .logoutBtn:hover {
   background: #fff;
   color: black;
+
 }
 .logoutBtn:before,
 button:after {
