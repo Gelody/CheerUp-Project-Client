@@ -1,34 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Card.css";
 import Comment from "./MainpageComment";
-import people from "../../images/people.jpg";
-
-function putImage() {
-  const image = new Image();
-  image.src = "../../images/people.jpg";
-  image.classList.add("card_img");
-  return image;
-}
 
 // 메인페이지의 카드(카드 내용과 댓글)
 function Card({ cards }: any) {
   if (cards.length === 0) {
     return <div>Loading...</div>;
   }
-  console.log(putImage());
+  console.log("카드는 뭣을?", { cards });
   return (
     <>
       <div className="maincard_wrapper">
         {cards.map((card: any, id: any) => (
           <div key={id} className="maincard_box">
-            {putImage}
-
             <div className="maincard">
-              <img src={people} className="card_img"></img>
+              <img
+                src={require(`../../images/${Math.floor(
+                  Math.random() * 10
+                )}.jpg`)}
+                className="card_img"
+              ></img>
+              {/* <PutImg /> */}
               <div className="maincards_date">
-                {card.D_day}까지 응원 해주세요
+                {card.D_day} 까지 응원해주세요!
               </div>
-
               <div className="maincards_text">{card.text}</div>
             </div>
 

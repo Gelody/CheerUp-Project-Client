@@ -15,8 +15,8 @@ function Comment({ cardId }: any) {
   const comment_get_Data = {
     headers: { authorization: user },
     params: {
-      id: card.cardId,
-    },
+      id: card.cardId
+    }
   };
 
   // 댓글 업로드 요청
@@ -24,9 +24,9 @@ function Comment({ cardId }: any) {
     e.preventDefault();
     axios
       .post("/comment/create", comment_upload_Data, {
-        headers: { authorization: user },
+        headers: { authorization: user }
       })
-      .then((res) => {
+      .then(res => {
         if (res.status === 200) {
           alert("댓글이 등록되었습니다.");
           history.push(`/cardmodalpages/${card.cardId}`);
@@ -34,7 +34,7 @@ function Comment({ cardId }: any) {
           alert("댓글 등록에 문제가 있습니다.");
         }
       })
-      .catch((err) => console.log(err));
+      .catch(err => console.log(err));
   };
 
   const onChangeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -59,15 +59,20 @@ function Comment({ cardId }: any) {
 
   return (
     <div className="comment_wrap">
-      <div className="comment_box">
-        <br />
-        {comments.map((comments: any, index: any) => (
-          <div key={index} className="comments">
-            <span className="comments_user_name">{comments.User.userName}</span>
-            <span className="user_comment"> {comments.text}</span>
-          </div>
-        ))}
-      </div>
+      {comments.length > 0 ? (
+        <div className="comment_box">
+          <br />
+          {comments.map((comments: any, index: any) => (
+            <div key={index} className="comments">
+              <span className="comments_user_name">
+                {comments.User.userName}
+              </span>
+              <span className="user_comment"> {comments.text}</span>
+            </div>
+          ))}
+          <br />
+        </div>
+      ) : null}
 
       <div className="comment_form_wrap">
         <form onSubmit={onSubmit}>
@@ -76,7 +81,7 @@ function Comment({ cardId }: any) {
             value={text}
             onChange={onChangeText}
             maxLength={80}
-            placeholder="댓글달기.."
+            placeholder="응원 댓글 남기기.."
           ></textarea>
           <button className="comment_button" type="submit">
             등록
