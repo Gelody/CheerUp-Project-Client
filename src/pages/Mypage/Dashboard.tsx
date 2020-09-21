@@ -24,16 +24,14 @@ function Dashboard({ cheeringCount, cheeredCount }: any) {
       .get("/user/getid", { headers: { authorization: user } })
       .then(({ data }) => {
         setUserInfo(data);
-        if (data) {
-          console.log("유저 아이디를 성공적으로 받았습니다", data);
-        } else {
-          console.log("유저의 아이디 데이터가 없습니다");
-        }
+        // if (data) {
+        //   console.log("유저 아이디를 성공적으로 받았습니다", data);
+        // } else {
+        //   console.log("유저의 아이디 데이터가 없습니다");
+        // }
       });
     // .catch((err) => console.log(err));
   }, []);
-
-  console.log("유저네임", userInfo.userName);
 
   return (
     <>
@@ -62,7 +60,7 @@ function Dashboard({ cheeringCount, cheeredCount }: any) {
         <ul>
           {userInfo.userName}님은
           <span className="Total_Count">
-            <br></br>지금까지 총 {cheeringCount[0]?.Commentcount} 명을 응원을
+            <br></br>지금까지 총 {cheeringCount[0]?.Commentcount} 명을 응원
             했습니다.
           </span>
         </ul>
