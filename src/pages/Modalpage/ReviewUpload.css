@@ -3,7 +3,7 @@
   margin: auto;
   margin-left: 1.5%;
   width: 95%;
-  height: 150px;
+  height: 400px;
   background: rgb(255, 255, 255);
   text-align: center;
   font-size: 2vw;
@@ -14,18 +14,45 @@
   text-align: center;
 }
 .review_update_button {
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   border: none;
   box-shadow: none;
   font-size: 1.5vw;
   margin: auto;
   display: flex;
   cursor: pointer;
+  outline: none;
   font-family: "CookieRunOTF-Bold";
+  position: relative;
+  transition: 800ms ease all;
+  
 }
 .review_update_button:hover {
-  box-shadow: none;
+  background: white;
+  color: black;
+}
+.review_update_button::before, button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width : 0;
+  background: black;
+  transition: 400ms ease all;
+}
+.review_update_button::after {
+  right: inherit;
+  top: inherit;
+  left :0;
+  bottom: 0;
+}
+.review_update_button:hover::before,
+button:hover:after {
+  width : 100%;
+  transition: 800ms ease all;
+
 }
 .review_container {
   border: solid;
@@ -40,9 +67,10 @@
 
 .close_button {
   border: 0px;
-  position: absolute;
-  left: 5px;
-  top: 5px;
+  position : absolute;
+  left : 5px;
+  top : 5px
+
 }
 
 @font-face {
