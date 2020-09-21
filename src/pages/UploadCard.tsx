@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./UploadCard.css";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import swal from "sweetalert";
 
 // 카드 업로드 기능
 function UploadCard() {
@@ -22,13 +23,13 @@ function UploadCard() {
       .post("/card/create", cardData, { headers: { authorization: user } })
       .then((res) => {
         if (res.status === 200) {
-          alert("카드가 등록되었습니다.");
+          swal("카드가 등록되었습니다.", "", "success");
           history.push("/main");
         } else {
-          alert("카드 등록에 문제가 있습니다.");
+          swal("카드 등록에 문제가 있습니다.", "", "warning");
         }
-      })
-      .catch((err) => console.log(err));
+      });
+    // .catch((err) => console.log(err));
   };
 
   const onChangeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {

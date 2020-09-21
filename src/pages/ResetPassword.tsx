@@ -3,6 +3,8 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import Background from "./background";
 import "./ResetPassword.css";
+import swal from "sweetalert";
+
 // useQuery 를 이용해서 리팩토링 할 것.
 function IsValidToken() {
   const [password, setPassword] = useState("");
@@ -11,7 +13,7 @@ function IsValidToken() {
   const token = window.location.href.split("=")[1];
   const resetInfo = {
     token: token,
-    newPassword: password
+    newPassword: password,
   };
   const history = useHistory();
 
@@ -27,19 +29,18 @@ function IsValidToken() {
     password !== passwordCheck
       ? setPasswordErr(true)
       : console.log({ resetInfo });
-    axios
-      .post("/mail/resetpassword", resetInfo)
-      .then(res => {
-        if (res.status === 202) {
-          alert("비밀번호가 변경되었습니다.");
-          history.push("/login");
-        } else if (res.status === 402) {
-          alert("오류가 발생했습니다. 다시 시도해주세요.");
-        }
-      })
-      .catch(err => {
-        console.log(err.response);
-      });
+
+    axios.post("/mail/resetpassword", resetInfo).then((res) => {
+      if (res.status === 202) {
+        swal("비밀번호가 변경되었습니다.", "", "success");
+        history.push("/login");
+      } else if (res.status === 402) {
+        swal("오류가 발생했습니다. 다시 시도해주세요.", "", "warning");
+      }
+    });
+    // .catch((err) => {
+    //   console.log(err.response);
+    // });
   };
 
   return (

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Signup.css";
 import axios from "axios";
 import Background from "./background";
+import swal from "sweetalert";
 
 function Signup() {
   // input을 담을 상태들과 상태변경 함수 선언하기
@@ -49,14 +50,14 @@ function Signup() {
       .post("/user/join", signUpInfo)
       .then((res) => {
         if (res.status === 200) {
-          alert("가입하신 이메일로 발송된 인증메일을 확인해주세요.");
+          swal("가입하신 이메일로 발송된 인증메일을 확인해주세요.", "", "info");
           window.open(`https://www.${email.split("@")[1]}`);
         }
       })
       .catch((err) => {
         if (err.response.status === 403) {
           console.log(err.response.data);
-          alert("가입된 이메일입니다.");
+          swal("가입된 이메일입니다.", "", "warning");
         }
       });
   };

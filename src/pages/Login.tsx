@@ -3,14 +3,15 @@ import { Link, useHistory } from "react-router-dom";
 import "./Login.css";
 import axios from "axios";
 import Background from "./background";
+import swal from "sweetalert";
 
 function Login() {
   // input을 담을 상태들과 상태변경 메서드 선언하기
   // Hooks 사용하기
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [isSignin, setIsSignin] = useState(false);
+  const [, setError] = useState("");
+  const [, setIsSignin] = useState(false);
   const signInInfo = { userId: email, userPassword: password };
   const history = useHistory();
 
@@ -20,21 +21,21 @@ function Login() {
     axios
       .post("/user/login", signInInfo)
       // 세션 스토리지에 저장하는 것으로 구현
-      .then(res => {
+      .then((res) => {
         sessionStorage.setItem("user", JSON.stringify(res.data.token));
         setIsSignin(true);
         if (res.status === 403) {
-          alert("존재하지 않는 아이디입니다.");
+          swal("존재하지 않는 아이디입니다.", "", "warning");
           history.push("/login");
         } else if (res.status === 200 && res.data.age) {
           history.push("/main");
         } else if (!res.data.age) {
-          alert("추가 회원 정보를 입력해주세요.");
+          swal("추가 회원 정보를 입력해주세요.", "", "info");
           history.push("/userinfo");
         }
       })
-      .catch(err => {
-        console.log(err);
+      .catch((err) => {
+        // console.log(err);
         setIsSignin(false);
         setError(err.message);
       });

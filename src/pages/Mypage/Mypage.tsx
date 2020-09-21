@@ -6,7 +6,6 @@ import CheeringList from "./CheeringList";
 import Nav from "../Nav";
 import axios from "axios";
 
-
 function Mypage() {
   const [mycard, setMycard]: any = useState([]);
   const [cheeredCount, setCheeredCount]: any = useState([]);
@@ -25,8 +24,8 @@ function Mypage() {
         // } else {
         //   console.log("총 받은 응원 수 데이터가 없습니다.")
         // }
-      })
-      .catch((err) => console.log(err));
+      });
+    // .catch((err) => console.log(err));
   }, []);
 
   // 총 내가 한 응원 수 합 요청
@@ -40,8 +39,8 @@ function Mypage() {
         // } else {
         //   console.log("총 한 응원 수 데이터가 없습니다.");
         // }
-      })
-      .catch((err) => console.log(err));
+      });
+    // .catch((err) => console.log(err));
   }, []);
 
   // 내 카드 요청
@@ -55,8 +54,8 @@ function Mypage() {
         // } else {
         //   console.log("카드 데이터가 없습니다");
         // }
-      })
-      .catch((err) => console.log(err));
+      });
+    // .catch((err) => console.log(err));
   }, []);
 
   // 내가 응원한 카드 요청
@@ -70,8 +69,8 @@ function Mypage() {
         // } else {
         //   console.log("카드 데이터가 없습니다")
         // }
-      })
-      .catch((err) => console.log(err));
+      });
+    // .catch((err) => console.log(err));
   }, []);
 
   return (
