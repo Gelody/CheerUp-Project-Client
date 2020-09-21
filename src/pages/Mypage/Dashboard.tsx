@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import "./Dashboard.css";
+import swal from "sweetalert";
 
 // 마이페이지에서의 대쉬보드(응원 받거나 한 숫자 카운트, 로그아웃)
 function Dashboard({ cheeringCount, cheeredCount }: any) {
@@ -25,7 +26,7 @@ function Dashboard({ cheeringCount, cheeredCount }: any) {
         <button
           onClick={() => {
             sessionStorage.clear();
-            alert("성공적으로 로그아웃 되었습니다.");
+            swal("성공적으로 로그아웃 되었습니다.", "", "success");
             history.push("/");
           }}
         >

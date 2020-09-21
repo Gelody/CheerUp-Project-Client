@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./CardUpdate.css";
+import swal from "sweetalert";
 
 function MycardUpdate({ cardId }: any) {
   const [text, setText] = useState("");
@@ -14,13 +15,13 @@ function MycardUpdate({ cardId }: any) {
       .post("/card/update", cardData, { headers: { authorization: user } })
       .then((res) => {
         if (res.status === 200) {
-          alert("카드가 수정되었습니다.");
+          swal("카드가 수정되었습니다.", "", "success");
           window.location.replace(cardId);
         } else {
-          alert("카드 수정에 문제가 있습니다.");
+          swal("카드 수정에 문제가 있습니다.", "", "warning");
         }
-      })
-      .catch((err) => console.log(err));
+      });
+    // .catch((err) => console.log(err));
   };
 
   const onChangeText = (e: React.ChangeEvent<HTMLTextAreaElement>) => {

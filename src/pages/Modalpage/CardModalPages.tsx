@@ -30,42 +30,38 @@ function CardModalPage() {
         // } else {
         //   console.log("유저의 아이디 데이터가 없습니다");
         // }
-      })
-      .catch((err) => console.log(err));
+      });
+    // .catch((err) => console.log(err));
   }, []);
 
   // 내 모든 카드들 요청
   useEffect(() => {
-    axios
-      .get("/card/getOtherUrl", mycard)
-      .then(({ data }) => {
-        setModalCard(data);
-        if (data) {
-          console.log(`모달카드를 잘 받았습니다.`, data);
-        } else {
-          console.log(`카드 데이터가 없습니다.`);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    axios.get("/card/getOtherUrl", mycard).then(({ data }) => {
+      setModalCard(data);
+      // if (data) {
+      //   console.log(`모달카드를 잘 받았습니다.`, data);
+      // } else {
+      //   console.log(`카드 데이터가 없습니다.`);
+      // }
+    });
+    // .catch((err) => {
+    //   console.log(err);
+    // });
   }, []);
 
   // 내 리뷰 요청
   useEffect(() => {
-    axios
-      .get("./card/getReview", mycard)
-      .then(({ data }) => {
-        setReview(data);
-        // if (data) {
-        //   console.log("후기를 잘 받았습니다", data);
-        // } else {
-        //   console.log("후기 데이터가 없습니다");
-        // }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    axios.get("./card/getReview", mycard).then(({ data }) => {
+      setReview(data);
+      // if (data) {
+      //   console.log("후기를 잘 받았습니다", data);
+      // } else {
+      //   console.log("후기 데이터가 없습니다");
+      // }
+    });
+    // .catch((err) => {
+    //   console.log(err);
+    // });
   }, []);
 
   const openModal = () => {
