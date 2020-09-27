@@ -1,0 +1,53 @@
+.upload_form {
+  border-style: none;
+  margin: auto;
+  margin-bottom: 3%;
+  width: 99%;
+  height: 300px;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 1.5vw;
+  font-family: sans-serif;
+  color: rgb(0, 0, 0);
+  outline: none;
+}
+
+
+.container {
+  width: 70%;
+  height: 50%;
+  margin: auto;
+  margin-top: 10vh;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.upload_button {
+  display: flex;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background: black;
+  color: white;
+  border: none;
+  width: 180px;
+  height: 40px;
+  font-size : 1em;
+  cursor: pointer;
+  font-family: "CookieRunOTF-Bold";
+  padding: 5px 60px;
+}
+.calendar {
+  margin: auto;
+  margin-top: 3%;
+  display: flex;
+}
+
+.calendar_title {
+  margin: auto;
+  margin-bottom: 3%;
+  text-align: center;
+  font-size: 1.5vw;
+  font-family: sans-serif;
+  color: rgb(0, 0, 0);
+}

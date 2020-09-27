@@ -1,0 +1,123 @@
+.modal_Wrapper {
+  background-color: rgba(241, 241, 241, 0.6);
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: auto;
+  outline: 0;
+}
+.modal_Inner {
+  box-sizing: border-box;
+  position: relative;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+  background-color: #fff;
+  border-radius: 10px;
+  width: 50%;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: auto;
+  overflow: scroll;
+}
+
+.modal_card {
+  color: white;
+  margin-top: 10%;
+  overflow-y: scroll;
+  width: 100%;
+  height: 500px;
+  text-align: center;
+  background-image: url("../../images/background.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.modal_card_text {
+  font-size: 3vh;
+  font-weight: bold;
+  padding-right: 10%;
+  padding-left: 10%;
+  line-height: 2em;
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+}
+
+.modal_comment_box {
+  border-top: solid;
+  border-color: rgb(218, 218, 218);
+  overflow-y: scroll;
+  width: 100%;
+  height: 30%;
+}
+
+.modal_comments_username {
+  font-size: 2vh;
+  font-weight: bold;
+  margin-left: 3%;
+}
+
+.modal_comments {
+  font-size: 2vh;
+  margin-left: 7%;
+  line-height: 2em;
+}
+
+.comment_delete_button {
+  background-color: #ffffff;
+  font-size: 1.5vh;
+  cursor: pointer;
+}
+
+.button_box {
+  margin-bottom: 3%;
+}
+
+.close_button {
+  background-color: #ffffff;
+  font-size: 1.8vh;
+  float: left;
+  cursor: pointer;
+}
+
+.card_delete_button {
+  background-color: #ffffff;
+  font-size: 1vw;
+  float: right;
+  cursor: pointer;
+}
+
+.nav_update_button {
+  background-color: #ffffff;
+  font-size: 1vw;
+  float: right;
+  cursor: pointer;
+}
+
+.modal_review_box {
+  border-top: solid;
+  border-color: rgb(218, 218, 218);
+  width: 100%;
+  height: 20%;
+  text-align: center;
+}
+
+.review_text {
+  font-weight: bold;
+  font-size: 2vh;
+  position: relative;
+  line-height: 2em;
+  overflow-y: scroll;
+  top: 20%;
+}
+
+.modal_card_date {
+  font-weight: bold;
+  font-size: 1.2vw;
+  margin-bottom: auto;
+}

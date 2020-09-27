@@ -1,0 +1,40 @@
+.navBar {
+  width: 100%;
+  height: 60px;
+  margin: auto;
+  background-color: white;
+  border-bottom: 0.01rem solid;
+  border-bottom-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.main_link_icon {
+  height: 100%;
+  width: 120px;
+  margin-left: 3%;
+}
+
+.upload_link_icon {
+  float: right;
+  width: 30px;
+  margin-right: 4%;
+  margin-top: 1%;
+}
+
+.notification_link_icon {
+  float: right;
+  width: 30px;
+  margin-right: 4%;
+  margin-top: 1%;
+}
+
+.mypage_link_icon {
+  float: right;
+  width: 30px;
+  margin-top: 1%;
+  margin-right: 3%;
+}

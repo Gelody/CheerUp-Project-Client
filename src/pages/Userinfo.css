@@ -1,0 +1,43 @@
+.userinfo_wrap {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+}
+
+.userinfo_title {
+  color: #ffffff;
+  font-size: 4vh;
+  font-weight: bold;
+  margin: 4vh;
+}
+
+.userinfo_age {
+  width: 30%;
+  font-size: 2.5vh;
+  display: block;
+  margin: auto;
+}
+
+.userinfo_gender {
+  width: 30%;
+  font-size: 2.5vh;
+  display: block;
+  margin: auto;
+}
+
+.userinfo_interest {
+  width: 30%;
+  font-size: 2.5vh;
+  display: block;
+  margin: auto;
+}
+
+.next_button {
+  background-color: #ffffff;
+  font-size: 20px;
+  padding: 5px 50px;
+  margin: auto;
+  display: flex;
+  cursor: pointer;
+}

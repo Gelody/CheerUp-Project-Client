@@ -1,0 +1,82 @@
+.review_update_form {
+  border-style: none;
+  margin: auto;
+  margin-left: 1.5%;
+  width: 95%;
+  height: 400px;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 2vw;
+  font-family: sans-serif;
+  color: rgb(0, 0, 0);
+}
+.modal_Inner p {
+  text-align: center;
+}
+.review_update_button {
+  background-color: black;
+  color: white;
+  border: none;
+  box-shadow: none;
+  font-size: 1.5vw;
+  margin: auto;
+  display: flex;
+  cursor: pointer;
+  outline: none;
+  font-family: "CookieRunOTF-Bold";
+  position: relative;
+  transition: 800ms ease all;
+  
+}
+.review_update_button:hover {
+  background: white;
+  color: black;
+}
+.review_update_button::before, button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width : 0;
+  background: black;
+  transition: 400ms ease all;
+}
+.review_update_button::after {
+  right: inherit;
+  top: inherit;
+  left :0;
+  bottom: 0;
+}
+.review_update_button:hover::before,
+button:hover:after {
+  width : 100%;
+  transition: 800ms ease all;
+
+}
+.review_container {
+  border: solid;
+  width: 70%;
+  height: 50%;
+  margin: auto;
+  margin-top: 20%;
+  margin-bottom: 10%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.close_button {
+  border: 0px;
+  position : absolute;
+  left : 5px;
+  top : 5px
+
+}
+
+@font-face {
+  font-family: "CookieRunOTF-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/CookieRunOTF-Bold00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

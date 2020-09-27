@@ -1,0 +1,15 @@
+.modal_comment_form {
+  margin-top: 3%;
+  font-size: 2vh;
+  border-style: none;
+  width: 99%;
+  height: 70px;
+  border-bottom: solid;
+  border-color: rgb(218, 218, 218);
+}
+
+.modal_comment_button {
+  background-color: white;
+  font-size: 2vh;
+  cursor: pointer;
+}

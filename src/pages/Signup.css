@@ -1,0 +1,63 @@
+.signup_form_wrap {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+}
+.signup_title {
+  color: #ffffff;
+  margin-top: 2vw;
+}
+.signup_form {
+  border: 1px solid #999;
+  font-size: 20px;
+  width: 30vh;
+  height: 4vh;
+  display: block;
+  margin: 30px auto;
+}
+
+.signup_button {
+  background-color: #ffffff;
+  font-size: 20px;
+  padding: 5px 50px;
+  margin: auto;
+  display: flex;
+  cursor: pointer;
+}
+
+.password-feedback {
+  color: red;
+  text-align: center;
+}
+
+.usable_user {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-weight: bold;
+}
+
+.unusable_user {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+
+.username_check_button {
+  background-color: #ffffff;
+  font-size: 20px;
+  padding: 5px 50px;
+  margin: auto;
+  display: flex;
+  cursor: pointer;
+}
+
+.username_form {
+  border: 1px solid #999;
+  font-size: 20px;
+  width: 30vh;
+  height: 4vh;
+  display: flex;
+  margin: auto;
+  margin-top: 30px;
+}

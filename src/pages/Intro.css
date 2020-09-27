@@ -1,0 +1,102 @@
+video {
+  width: 100%;
+}
+/* body {
+  height: 100%;
+  overflow: hidden;
+} */
+
+.bg_video {
+  width: 100%;
+  height: 100%;
+}
+
+.video_contents {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  color: #fff;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  margin-top: 5vh;
+}
+.intro_title {
+  font-size: 10vh;
+  font-weight: bold;
+  margin-top: 4vh;
+}
+.intro_subtitle {
+  font-size: 8vh;
+  font-weight: bold;
+  margin: 0;
+}
+
+.intro_copy {
+  font-size: 6vh;
+  font-weight: bold;
+  margin-top: 3vw;
+  margin-bottom: 2vw;
+}
+
+.link_button {
+  font-size: 4vh;
+  font-weight: bold;
+  padding: 5px;
+  margin-top: 120vw;
+}
+.intro_cta {
+  color: #fff;
+}
+/* .video_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+  opacity: 0.5;
+} */
+
+/* .link_button {
+  color: rgb(0, 0, 0);
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 3vw;
+  border: solid;
+  width: 70%;
+  margin: auto;
+  cursor: pointer;
+} */
+/* 
+.intro_img {
+  background-image: url(../images/people.jpg);
+  height: 80%;
+  background-size: cover;
+  width: 70%;
+  margin: auto;
+}
+
+.intro_wrap {
+  border: solid;
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  height: 700px;
+  margin-top: 2%;
+}
+
+.intro_img .intro_text {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-size: 3vw;
+} */
